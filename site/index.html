@@ -1,0 +1,1629 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>[hidden]{display:none!important}img{max-width:100%}body{margin:0}</style>
+<title>Gramo | Gustări proteice care chiar au gust</title>
+<meta name="description" content="Batoane, cookies, lactate, pudre și băuturi bogate în proteine. Peste 75 de produse, livrare rapidă în toată țara. Gramo, fiecare gram contează.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: label-grid shop. Cobalt + butter on cool milk paper; numbers set like a scale readout; nutrition tables styled after EU labels. */
+:root{
+  --paper:#F4F5FB; --card:#FFFFFF; --ink:#11153D; --muted:#5B6089; --line:#DCDFF0;
+  --cobalt:#2B37E8; --on-cobalt:#FFFFFF; --cobalt-soft:#E6E8FF;
+  --butter:#FFD84A; --on-butter:#11153D; --berry:#E8385E; --mint:#1F9D6B;
+  --shadow:0 1px 0 rgba(17,21,61,.06), 0 10px 30px -18px rgba(17,21,61,.35);
+  --f-display:"Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --f-body:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"DM Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --r:14px; --wrap:1240px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#0B0E29; --card:#141941; --ink:#ECEEFF; --muted:#A2A7D3; --line:#272D60;
+  --cobalt:#8A93FF; --on-cobalt:#0B0E29; --cobalt-soft:#1D2356; --butter:#FFD84A; --on-butter:#11153D;
+  --berry:#FF6F8C; --mint:#4FD39C; --shadow:0 10px 30px -18px rgba(0,0,0,.8); color-scheme:dark }}
+:root[data-theme="dark"]{
+  --paper:#0B0E29; --card:#141941; --ink:#ECEEFF; --muted:#A2A7D3; --line:#272D60;
+  --cobalt:#8A93FF; --on-cobalt:#0B0E29; --cobalt-soft:#1D2356; --butter:#FFD84A; --on-butter:#11153D;
+  --berry:#FF6F8C; --mint:#4FD39C; --shadow:0 10px 30px -18px rgba(0,0,0,.8); color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--f-body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+h1,h2,h3,h4{font-family:var(--f-display);line-height:1.04;letter-spacing:-.02em;margin:0;text-wrap:balance;font-weight:800}
+p{margin:0}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:20px}
+.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+img.photo{display:block;width:100%;height:100%;object-fit:cover}
+.pcard .img img.photo{position:absolute;inset:0;transition:transform .4s}
+.pcard:hover .img img.photo{transform:scale(1.04)}
+.cat .art{overflow:hidden;padding:0}.cat .art img.photo{aspect-ratio:1/1;border-radius:10px}
+.pdp .gallery img.photo{position:absolute;inset:0}
+.line .th{overflow:hidden}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* ---------- logo ---------- */
+.logo{display:inline-flex;align-items:baseline;font:800 30px/1 var(--f-display);letter-spacing:-.045em;text-decoration:none;color:var(--ink)}
+.logo .dial{width:.66em;height:.66em;margin-left:.03em;transform:translateY(.03em);flex:none}
+.dial .rim{fill:none;stroke:currentColor}
+.dial .needle{stroke:var(--cobalt)}
+.dial .hub{fill:var(--cobalt)}
+.dial .face{fill:var(--butter)}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:2px solid transparent;border-radius:999px;padding:13px 22px;font:700 15px/1 var(--f-body);text-decoration:none;transition:transform .15s, background .15s, box-shadow .15s;white-space:nowrap}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--cobalt);color:var(--on-cobalt)}
+.btn-primary:hover{box-shadow:0 6px 0 -2px var(--butter)}
+.btn-ghost{border-color:currentColor;background:transparent}
+.btn-ghost:hover{background:var(--cobalt-soft)}
+.btn-butter{background:var(--butter);color:var(--on-butter)}
+.btn-sm{padding:9px 14px;font-size:14px}
+.btn-block{width:100%}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+
+/* ---------- announcement + header ---------- */
+.announce{background:var(--ink);color:var(--paper);font:500 13px/1 var(--f-body);text-align:center;padding:10px 16px;min-height:34px}
+.announce b{color:var(--butter);font-weight:700}
+.announce span{display:inline-block;animation:ann .5s ease}
+@keyframes ann{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .bar{display:flex;align-items:center;gap:24px;height:68px}
+.nav{display:flex;gap:4px;flex:1;min-width:0}
+.nav a{font:600 15px/1 var(--f-body);text-decoration:none;padding:9px 12px;border-radius:999px;color:var(--ink)}
+.nav a:hover,.nav a[aria-current="page"]{background:var(--cobalt-soft);color:var(--cobalt)}
+.icon-btn{display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;padding:9px 12px;border-radius:999px;font-weight:600}
+.icon-btn:hover{background:var(--cobalt-soft)}
+.icon-btn svg{width:22px;height:22px}
+.cart-count{min-width:22px;height:22px;border-radius:999px;background:var(--butter);color:var(--on-butter);font:600 12px/22px var(--f-mono);text-align:center;padding:0 6px}
+.menu-btn{display:none}
+@media (max-width:960px){
+  .nav{display:none}
+  .menu-btn{display:inline-flex}
+  .top .bar{gap:8px;justify-content:space-between}
+  .nav.open{display:flex;position:absolute;top:68px;left:0;right:0;flex-direction:column;background:var(--paper);padding:12px 16px 20px;border-bottom:1px solid var(--line)}
+  .nav.open a{padding:14px 12px;font-size:17px}
+}
+
+/* ---------- hero ---------- */
+.hero{padding-block:48px 56px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(44px,7vw,92px);letter-spacing:-.045em}
+.hero h1 em{font-style:normal;color:var(--cobalt)}
+.hero .sub{font-size:clamp(17px,1.6vw,20px);color:var(--muted);max-width:34ch;margin-top:20px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.scale{position:relative;background:var(--butter);color:var(--on-butter);border-radius:28px;padding:28px;aspect-ratio:1/1.02;max-width:100%;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.scale .readout{background:#11153D;color:#C9FF6B;border-radius:14px;padding:14px 18px;display:flex;align-items:baseline;justify-content:space-between;font-family:var(--f-mono);box-shadow:inset 0 2px 8px rgba(0,0,0,.5)}
+.scale .readout .v{font-size:clamp(48px,6vw,76px);line-height:1;letter-spacing:-.04em}
+.scale .readout small{font-size:13px;color:#9AA0D8;letter-spacing:.1em;text-transform:uppercase}
+.scale .packs{display:flex;align-items:flex-end;justify-content:center;gap:4%;margin-top:8px}
+.scale .packs svg{width:30%;height:auto;filter:drop-shadow(0 10px 12px rgba(17,21,61,.25))}
+.scale .packs svg:nth-child(2){width:36%;transform:translateY(-6px)}
+.scale .plate{height:14px;background:#11153D;border-radius:999px;margin-inline:6%}
+.scale .tag{font:600 13px/1.3 var(--f-mono);display:flex;justify-content:space-between;gap:12px}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.scale{aspect-ratio:auto;min-height:340px}}
+
+/* ---------- benefits ---------- */
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line)}
+.benefit{padding:24px 22px;display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start}
+.benefit + .benefit{border-left:1px solid var(--line)}
+.benefit svg{width:40px;height:40px;color:var(--cobalt)}
+.benefit h3{font-size:18px;letter-spacing:-.01em}
+.benefit p{color:var(--muted);font-size:14.5px;margin-top:4px}
+@media (max-width:960px){.benefits{grid-template-columns:1fr 1fr}.benefit:nth-child(3){border-left:0}.benefit:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:520px){.benefits{grid-template-columns:1fr}.benefit + .benefit{border-left:0;border-top:1px solid var(--line)}}
+
+/* ---------- sections ---------- */
+.section{padding-block:72px}
+.sec-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:28px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(32px,4.4vw,54px)}
+.sec-head p{color:var(--muted);max-width:46ch;margin-top:10px}
+
+.cats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.cat{position:relative;display:flex;flex-direction:column;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;text-decoration:none;min-height:300px;transition:transform .2s, border-color .2s}
+.cat:hover{transform:translateY(-4px);border-color:var(--cobalt)}
+.cat .art{flex:1;display:grid;place-items:center;border-radius:10px;padding:8px}
+.cat .art svg{width:72%;max-height:150px}
+.cat h3{font-size:21px}
+.cat p{font-size:14px;color:var(--muted)}
+.cat .count{position:absolute;top:14px;right:16px;font:500 12px var(--f-mono);color:var(--muted)}
+@media (max-width:1060px){.cats{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.cats{grid-template-columns:1fr 1fr}.cat{min-height:240px}}
+@media (max-width:380px){.cats{grid-template-columns:1fr}}
+
+/* ---------- product cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+@media (max-width:1060px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+.pcard{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:border-color .2s, transform .2s}
+.pcard:hover{border-color:var(--cobalt)}
+.pcard .img{position:relative;display:grid;place-items:center;aspect-ratio:1/1;text-decoration:none}
+.pcard .img svg{width:70%;height:auto;transition:transform .3s}
+.pcard:hover .img svg{transform:rotate(-3deg) scale(1.04)}
+.gbadge{position:absolute;left:10px;top:10px;background:var(--ink);color:var(--paper);border-radius:8px;padding:6px 8px;font:500 12px/1 var(--f-mono);display:flex;flex-direction:column;gap:3px}
+.gbadge b{font:800 20px/1 var(--f-display);letter-spacing:-.03em;color:var(--butter)}
+.flags{position:absolute;right:10px;top:10px;display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+.flag{font:600 11px/1 var(--f-body);padding:5px 8px;border-radius:999px;background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.flag.best{background:var(--butter);color:var(--on-butter);border-color:transparent}
+.flag.cold{background:var(--cobalt-soft);color:var(--cobalt);border-color:transparent}
+.flag.out{background:var(--ink);color:var(--paper)}
+.pcard .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.pcard h3{font:700 16.5px/1.25 var(--f-body);letter-spacing:-.005em}
+.pcard h3 a{text-decoration:none}
+.pcard .blurb{font-size:14px;color:var(--muted)}
+.pcard .meta{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding-top:10px}
+.price{font:600 17px var(--f-mono)}
+.price small{font-size:12px;color:var(--muted);font-weight:400}
+.add{width:42px;height:42px;border-radius:999px;border:0;background:var(--cobalt);color:var(--on-cobalt);display:grid;place-items:center;flex:none}
+.add:hover{background:var(--ink);color:var(--paper)}
+.add svg{width:20px;height:20px}
+@media (max-width:520px){.pcard .blurb{display:none}.pcard h3{font-size:15px}.pcard .body{padding:12px}}
+
+/* ---------- blocks ---------- */
+.tasting{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--cobalt);color:var(--on-cobalt);border-radius:28px;overflow:hidden}
+.tasting .txt{padding:48px;display:flex;flex-direction:column;gap:18px;justify-content:center}
+.tasting h2{font-size:clamp(32px,4vw,52px)}
+.tasting p{font-size:18px;opacity:.88;max-width:40ch}
+.tasting .art{background:var(--butter);display:grid;place-items:center;padding:30px;min-height:320px}
+.tasting .art .boxgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;width:100%;max-width:440px}
+.tasting .art .boxgrid svg{width:100%;height:auto}
+@media (max-width:820px){.tasting{grid-template-columns:1fr}.tasting .txt{padding:32px 24px}}
+
+.learn{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.learn h2{font-size:clamp(30px,4vw,50px)}
+.learn .copy{display:flex;flex-direction:column;gap:18px}
+.learn .copy p{font-size:17.5px;max-width:52ch}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:18px}
+.calc label{font-weight:600}
+.calc .row{display:flex;align-items:center;gap:14px}
+.calc input[type=range]{flex:1;accent-color:var(--cobalt)}
+.calc .kg{font:600 22px var(--f-mono);min-width:76px;text-align:right}
+.calc .out{display:flex;align-items:baseline;gap:10px;border-top:1px dashed var(--line);padding-top:18px}
+.calc .out .big{font:800 64px/1 var(--f-display);letter-spacing:-.04em;color:var(--cobalt)}
+.bars{display:flex;gap:4px;height:14px}
+.bars i{flex:1;border-radius:3px;background:var(--line)}
+.bars i.on{background:var(--butter)}
+.calc .fine{font-size:13px;color:var(--muted)}
+@media (max-width:860px){.learn{grid-template-columns:1fr}}
+
+.launch{border:2px dashed var(--cobalt);border-radius:22px;padding:40px;display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center}
+.launch .stars{font-size:30px;letter-spacing:4px;color:var(--butter);-webkit-text-stroke:1px var(--ink)}
+.launch h3{font-size:26px}
+.launch p{color:var(--muted);margin-top:6px;max-width:56ch}
+@media (max-width:760px){.launch{grid-template-columns:1fr;padding:28px 22px}}
+
+.news{background:var(--ink);color:var(--paper);border-radius:28px;padding:56px 48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.news h2{font-size:clamp(40px,6vw,76px);color:var(--butter)}
+.news p{opacity:.85;margin-top:12px;max-width:40ch}
+.news form{display:flex;flex-direction:column;gap:10px}
+.news .field{display:flex;gap:8px;background:var(--paper);border-radius:999px;padding:6px}
+.news input{flex:1;min-width:0;border:0;background:transparent;padding:10px 16px;font:500 16px var(--f-body);color:var(--ink)}
+.news input:focus{outline:none}
+.news .fine{font-size:13px;opacity:.7}
+.news .err{color:var(--berry);font-size:14px}
+.news .ok{background:var(--butter);color:var(--on-butter);border-radius:16px;padding:18px;font-weight:600}
+.news .ok code{font:600 20px var(--f-mono);background:var(--ink);color:var(--butter);padding:3px 10px;border-radius:8px}
+@media (max-width:820px){.news{grid-template-columns:1fr;padding:36px 24px}.news .field{flex-direction:column;border-radius:18px}}
+
+/* ---------- footer ---------- */
+footer{margin-top:72px;border-top:1px solid var(--line);padding-block:56px 32px}
+.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:32px}
+footer h4{font:600 12px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--cobalt);text-decoration:underline}
+footer .about p{color:var(--muted);max-width:34ch;margin-top:14px}
+footer .legalbar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:44px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+footer .badges{display:flex;gap:10px;flex-wrap:wrap}
+footer .badges a{border:1px solid var(--line);border-radius:8px;padding:8px 12px;font:600 12px var(--f-mono)}
+@media (max-width:820px){.fgrid{grid-template-columns:1fr 1fr}.fgrid .about{grid-column:1/-1}}
+
+/* ---------- category page ---------- */
+.crumbs{font-size:13px;color:var(--muted);padding-top:24px;display:flex;gap:8px;flex-wrap:wrap}
+.crumbs a{text-decoration:none}.crumbs a:hover{color:var(--cobalt)}
+.cat-hero{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;padding-block:20px 28px;border-bottom:1px solid var(--line)}
+.cat-hero h1{font-size:clamp(40px,6vw,72px);letter-spacing:-.04em}
+.cat-hero p{color:var(--muted);font-size:18px;max-width:58ch;margin-top:14px}
+.cat-hero .stat{text-align:right}
+.cat-hero .stat b{display:block;font:800 52px/1 var(--f-display);color:var(--cobalt);letter-spacing:-.04em}
+@media (max-width:700px){.cat-hero{grid-template-columns:1fr}.cat-hero .stat{text-align:left}}
+.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding-block:18px}
+.chip{border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:8px 14px;font:600 14px var(--f-body)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.toolbar .spacer{flex:1}
+select{font:600 14px var(--f-body);background:var(--card);color:var(--ink);border:1.5px solid var(--line);border-radius:999px;padding:8px 14px}
+.notice{display:flex;gap:12px;align-items:flex-start;background:var(--cobalt-soft);color:var(--ink);border-radius:12px;padding:14px 16px;font-size:14.5px}
+.notice svg{width:20px;height:20px;flex:none;color:var(--cobalt);margin-top:1px}
+.notice.warn{background:color-mix(in srgb, var(--butter) 35%, var(--card))}
+.notice.warn svg{color:var(--ink)}
+.empty{padding:60px 0;text-align:center;color:var(--muted)}
+
+/* ---------- product page ---------- */
+.pdp{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding-block:20px 40px}
+.pdp .gallery{position:sticky;top:96px;align-self:start;border-radius:24px;aspect-ratio:1/1;display:grid;place-items:center;overflow:hidden}
+.pdp .gallery svg{width:64%;height:auto;filter:drop-shadow(0 24px 30px rgba(17,21,61,.25))}
+.pdp .gallery .gbadge{left:20px;top:20px;padding:10px 12px;font-size:13px}
+.pdp .gallery .gbadge b{font-size:34px}
+.pdp h1{font-size:clamp(32px,4vw,48px);letter-spacing:-.035em}
+.pdp .info{display:flex;flex-direction:column;gap:18px;min-width:0}
+.pdp .lead{font-size:18px;color:var(--muted)}
+.tagrow{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font:600 12.5px/1 var(--f-body);border:1px solid var(--line);border-radius:999px;padding:7px 10px;background:var(--card)}
+.macro{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card)}
+.macro div{padding:14px;display:flex;flex-direction:column;gap:4px}
+.macro div + div{border-left:1px solid var(--line)}
+.macro b{font:600 22px/1 var(--f-mono)}
+.macro span{font-size:12px;color:var(--muted)}
+.macro .hl{background:var(--butter);color:var(--on-butter)}
+.macro .hl span{color:var(--on-butter);opacity:.75}
+.buybox{display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--line);padding-top:18px}
+.buybox .pr{font:600 32px/1 var(--f-mono)}
+.buybox .pr s{font-size:18px;color:var(--muted);margin-left:8px}
+.opt{display:flex;flex-direction:column;gap:8px}
+.opt label{display:flex;gap:12px;align-items:flex-start;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;background:var(--card)}
+.opt label:has(input:checked){border-color:var(--cobalt);background:var(--cobalt-soft)}
+.opt input{accent-color:var(--cobalt);margin-top:3px}
+.opt small{display:block;color:var(--muted);font-size:13px}
+.opt .freq{margin-top:8px;display:flex;gap:6px}
+.qtyrow{display:flex;gap:10px;flex-wrap:wrap}
+.qty{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:999px;background:var(--card)}
+.qty button{border:0;background:transparent;width:40px;height:44px;font-size:20px}
+.qty span{min-width:28px;text-align:center;font:600 16px var(--f-mono)}
+.qtyrow .btn{flex:1;min-width:150px}
+.ship-line{font-size:14px;color:var(--muted);display:flex;gap:8px;align-items:center}
+.ship-line svg{width:18px;height:18px;color:var(--mint)}
+.stock-low{color:var(--berry);font-weight:600;font-size:14px}
+.notify{display:flex;gap:8px;flex-wrap:wrap}
+.notify input{flex:1;min-width:180px}
+.tabs{border-top:1px solid var(--line);margin-top:8px}
+.tablist{display:flex;gap:4px;overflow-x:auto;border-bottom:1px solid var(--line);scrollbar-width:none}
+.tablist button{border:0;background:transparent;padding:16px 14px;font:600 15px var(--f-body);color:var(--muted);border-bottom:3px solid transparent;white-space:nowrap}
+.tablist button[aria-selected="true"]{color:var(--ink);border-color:var(--cobalt)}
+.tabpanel{padding-block:22px;display:flex;flex-direction:column;gap:14px;max-width:70ch}
+.tabpanel h4{font:700 15px var(--f-body);letter-spacing:0}
+.allergens b{font-weight:700}
+
+/* EU nutrition label */
+.nlabel{border:2px solid var(--ink);border-radius:6px;background:var(--card);overflow-x:auto;max-width:520px}
+.nlabel table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:320px}
+.nlabel caption{text-align:left;padding:12px 14px;font:800 20px var(--f-display);border-bottom:6px solid var(--ink);letter-spacing:-.01em}
+.nlabel th,.nlabel td{padding:8px 14px;border-bottom:1px solid var(--line);text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.nlabel th:first-child,.nlabel td:first-child{text-align:left;font-family:var(--f-body)}
+.nlabel thead th{font:600 12px var(--f-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);border-bottom:2px solid var(--ink)}
+.nlabel .indent td:first-child{padding-left:30px;color:var(--muted)}
+.nlabel tr.prot td{font-weight:600;background:color-mix(in srgb, var(--butter) 30%, transparent)}
+.fine{font-size:13px;color:var(--muted)}
+.legal-note{border-left:4px solid var(--ink);padding:10px 14px;font-size:14px;background:var(--card);border-radius:0 8px 8px 0}
+
+@media (max-width:900px){.pdp{grid-template-columns:1fr;gap:24px}.pdp .gallery{position:relative;top:0}.macro{grid-template-columns:repeat(2,1fr)}.macro div:nth-child(3){border-left:0}.macro div:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* ---------- cart drawer ---------- */
+.scrim{position:fixed;inset:0;background:rgba(11,14,41,.45);z-index:60;opacity:0;pointer-events:none;transition:opacity .2s}
+.scrim.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--paper);z-index:70;transform:translateX(102%);transition:transform .28s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);border-left:1px solid var(--line)}
+.drawer.open{transform:none}
+.drawer header{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
+.drawer header h2{font-size:24px}
+.drawer .items{flex:1;overflow-y:auto;padding:8px 20px}
+.drawer footer{margin:0;border-top:1px solid var(--line);padding:16px 20px 20px;display:flex;flex-direction:column;gap:12px}
+.line{display:grid;grid-template-columns:64px 1fr auto;gap:12px;padding-block:14px;border-bottom:1px solid var(--line);align-items:center}
+.line .th{width:64px;height:64px;border-radius:10px;display:grid;place-items:center}
+.line .th svg{width:78%;height:auto}
+.line h4{font:600 14.5px/1.3 var(--f-body);letter-spacing:0}
+.line small{color:var(--muted);font-size:12.5px;display:block}
+.line .qty button{width:30px;height:32px;font-size:16px}
+.line .qty span{min-width:22px;font-size:14px}
+.line .r{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.linkbtn{border:0;background:none;padding:0;color:var(--muted);font-size:12.5px;text-decoration:underline}
+.progress{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px;display:flex;flex-direction:column;gap:8px}
+.progress .track{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.progress .track i{display:block;height:100%;background:var(--cobalt);border-radius:99px;transition:width .3s}
+.progress.done .track i{background:var(--mint)}
+.totals{display:flex;flex-direction:column;gap:6px;font-size:15px}
+.totals div{display:flex;justify-content:space-between}
+.totals .grand{font:700 19px var(--f-body);border-top:1px solid var(--line);padding-top:10px;margin-top:4px}
+.totals .grand span:last-child{font-family:var(--f-mono)}
+.coupon summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--cobalt)}
+.coupon .cf{display:flex;gap:8px;margin-top:10px}
+.coupon input{flex:1;min-width:0}
+.cart-empty{text-align:center;padding:60px 10px;display:flex;flex-direction:column;align-items:center;gap:16px}
+.cart-empty svg{width:120px}
+
+/* ---------- forms ---------- */
+.input, .news input.input{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:12px 14px;font:500 16px var(--f-body);width:100%}
+.input:focus{outline:none;border-color:var(--cobalt)}
+.form{display:grid;gap:14px}
+.form .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:14px}
+.form .err{color:var(--berry);font-size:13px;font-weight:500;min-height:0}
+.form .bad .input{border-color:var(--berry)}
+textarea.input{min-height:140px;resize:vertical}
+@media (max-width:560px){.form .two{grid-template-columns:1fr}}
+
+.checkout{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;padding-block:28px}
+.checkout h1{font-size:44px}
+.checkout h2{font-size:22px;margin-bottom:14px}
+.co-box{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+.summary{position:sticky;top:96px;align-self:start;display:flex;flex-direction:column;gap:14px}
+.pay{display:grid;gap:8px}
+@media (max-width:900px){.checkout{grid-template-columns:1fr}.summary{position:relative;top:0}}
+.demo-pill{display:inline-block;font:600 12px var(--f-mono);background:var(--butter);color:var(--on-butter);padding:4px 8px;border-radius:6px}
+
+/* ---------- static pages ---------- */
+.page{padding-block:32px 24px;max-width:860px}
+.page h1{font-size:clamp(38px,6vw,68px);letter-spacing:-.04em}
+.page .prose{display:flex;flex-direction:column;gap:16px;font-size:18px;margin-top:26px;max-width:64ch}
+.page .prose h2{font-size:30px;margin-top:22px}
+.page .prose ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+.page .prose li::marker{color:var(--cobalt)}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:10px}
+.values div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.values b{display:block;font:800 22px var(--f-display);margin-bottom:6px;color:var(--cobalt)}
+.values p{font-size:15px;color:var(--muted)}
+@media (max-width:700px){.values{grid-template-columns:1fr}}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font:700 19px/1.3 var(--f-body);position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:14px;font:400 30px var(--f-mono);color:var(--cobalt);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding-bottom:20px;color:var(--muted);font-size:17px;max-width:62ch}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;margin-top:28px}
+.contact-grid dl{margin:0;display:grid;gap:16px}
+.contact-grid dt{font:600 12px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.contact-grid dd{margin:4px 0 0;font-size:17px;user-select:all}
+@media (max-width:760px){.contact-grid{grid-template-columns:1fr}}
+.ph{background:color-mix(in srgb, var(--butter) 40%, transparent);border-radius:4px;padding:0 4px;font-family:var(--f-mono);font-size:.9em}
+
+/* brand page */
+.brand-hero{display:grid;place-items:center;background:var(--cobalt);color:var(--on-cobalt);border-radius:28px;padding:80px 20px;margin-top:20px}
+.brand-hero .logo{font-size:clamp(80px,16vw,200px);color:var(--on-cobalt)}
+.brand-hero .logo .dial .needle{stroke:var(--ink)}
+.brand-hero .logo .dial .hub{fill:var(--ink)}
+.brand-hero p{font:500 15px var(--f-mono);letter-spacing:.2em;text-transform:uppercase;margin-top:10px}
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.bgrid > div{border-radius:18px;padding:28px;display:grid;place-items:center;min-height:200px}
+.swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:14px}
+.sw{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+.sw i{display:block;height:110px}
+.sw div{padding:10px 12px;font-size:13px}
+.sw b{display:block;font-size:14px}
+.sw code{font-family:var(--f-mono);color:var(--muted)}
+.typespec{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.typespec div{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;overflow:hidden}
+.typespec .s{font-size:56px;line-height:1;margin-block:10px}
+.voice{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.voice div{border-radius:18px;padding:24px;background:var(--card);border:1px solid var(--line)}
+.voice ul{margin:10px 0 0;padding-left:18px;display:grid;gap:6px}
+@media (max-width:820px){.bgrid,.typespec,.voice{grid-template-columns:1fr}.swatches{grid-template-columns:repeat(2,1fr)}}
+
+/* cookie + toast */
+.cookie{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:80;max-width:560px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
+.cookie p{font-size:14.5px}
+.cookie .b{display:flex;gap:8px;flex-wrap:wrap}
+.cookie .opts{display:grid;gap:8px;font-size:14px}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,140%);background:var(--ink);color:var(--paper);padding:12px 18px;border-radius:999px;font-weight:600;font-size:14.5px;z-index:90;transition:transform .25s;display:flex;gap:10px;align-items:center;max-width:calc(100% - 32px)}
+.toast.show{transform:translate(-50%,0)}
+.toast b{color:var(--butter)}
+
+.p404{text-align:center;padding-block:80px;display:flex;flex-direction:column;align-items:center;gap:22px}
+.p404 .n{font:800 clamp(120px,22vw,240px)/0.9 var(--f-display);letter-spacing:-.06em;color:var(--cobalt)}
+.p404 p{font-size:20px;max-width:34ch}
+.confirm{padding-block:60px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px}
+.confirm h1{font-size:clamp(36px,5vw,60px)}
+.confirm .order{font:600 24px var(--f-mono);background:var(--butter);color:var(--on-butter);padding:8px 16px;border-radius:10px}
+</style>
+</head>
+<body>
+
+<div class="announce" id="announce" aria-live="polite"></div>
+<header class="top">
+  <div class="wrap bar">
+    <a href="#acasa" class="logo" aria-label="Gramo, acasă" id="logo"></a>
+    <nav class="nav" id="nav" aria-label="Categorii"></nav>
+    <div style="display:flex;gap:4px;align-items:center">
+      <button class="icon-btn" id="cartBtn" aria-label="Deschide coșul">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9L5 7Z"/><path d="M9 7V6a3 3 0 0 1 6 0v1"/></svg>
+        <span class="cart-count num" id="cartCount">0</span>
+      </button>
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Meniu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="app"></main>
+<footer><div class="wrap" id="footer"></div></footer>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Coș de cumpărături" aria-hidden="true"></aside>
+<div class="toast" id="toast" role="status"></div>
+<div id="cookieSlot"></div>
+<script>
+// Gramo: catalog produse. n = [kcal, proteine, carbohidrați, zaharuri, grăsimi, saturate, fibre, sare] per 100 g / 100 ml
+window.CATS = [
+  { id: "batoane", name: "Batoane proteice", short: "Batoane", shape: "bar",
+    tile: "Gustarea din geantă. 20 g de proteine pe baton.",
+    intro: "Gustarea care încape în orice geantă. Până la 21 g de proteine pe baton, texturi moi sau crocante și arome de care chiar o să-ți fie poftă.",
+    mt: "Batoane proteice | Gramo",
+    md: "15 batoane proteice cu până la 21 g de proteine și fără zahăr adăugat. Arome clasice, vegane și ediții limitate. Livrare în 24-48h.",
+    filters: ["Vegan", "Fără zahăr adăugat", "Crocant", "Moale", "Ediție limitată"] },
+  { id: "lactate", name: "Lactate proteice", short: "Lactate", shape: "cup",
+    tile: "Iaurturi, brânzeturi și deserturi la frigider. Cremoase, sățioase.",
+    intro: "Iaurturi cremoase, brânzeturi și deserturi de frigider, cu până la 20 g de proteine pe porție. Le livrăm la rece, în cutie izotermă.",
+    mt: "Iaurturi și brânzeturi proteice | Gramo",
+    md: "Skyr, iaurt grecesc, brânză de vaci, cottage cheese și budinci proteice. Puține grăsimi, multe proteine, livrare la rece în 24-48h.",
+    filters: ["Iaurturi", "Brânzeturi", "Deserturi", "Vegan", "Fără zahăr adăugat"],
+    note: "Lactatele se păstrează la 2-6°C și nu se pot returna (produse perisabile)." },
+  { id: "snackuri", name: "Cookies & snackuri proteice", short: "Cookies & snackuri", shape: "bag",
+    tile: "Pentru momentele de ronțăit. Fără să-ți strice ziua.",
+    intro: "Pentru momentele de ronțăit. Cookies moi, chips-uri crocante, pufuleți și granola, toate cu mai multă proteină decât varianta clasică.",
+    mt: "Cookies și snackuri proteice | Gramo",
+    md: "Cookies proteice, chips-uri cu 20 g de proteine, pufuleți, granola și jerky. Snackuri sățioase pentru birou, drum sau seara de film.",
+    filters: ["Dulci", "Sărate", "Vegan", "Crocant", "Fără zahăr adăugat"] },
+  { id: "pudre", name: "Pudre proteice", short: "Pudre", shape: "pouch",
+    tile: "Shake-ul de după sală sau baza pentru clătite. Tu alegi.",
+    intro: "Shake-ul de după sală, baza pentru clătite sau un smoothie rapid dimineața. Whey, izolat, cazeină și proteine vegetale, toate cu gust bun și care se dizolvă fără cocoloașe.",
+    mt: "Pudre proteice: whey, izolat, vegan | Gramo",
+    md: "Proteină din zer, izolat, cazeină și proteine vegane cu până la 27 g de proteine pe porție. Arome care chiar au gust. Livrare în 24-48h.",
+    filters: ["Whey concentrat", "Izolat", "Cazeină", "Vegan", "Mix-uri pentru gătit"] },
+  { id: "bauturi", name: "Băuturi proteice", short: "Băuturi", shape: "bottle",
+    tile: "Deschizi, bei, pleci. Proteină la pachet.",
+    intro: "Deschizi, bei, pleci. Shake-uri gata făcute, apă proteică, kefir și lapte, cu până la 25 g de proteine pe sticlă.",
+    mt: "Shake-uri și băuturi proteice | Gramo",
+    md: "Shake-uri proteice gata de băut cu 25 g de proteine, apă proteică, kefir și iced latte proteic. Fără zahăr adăugat, livrare în 24-48h.",
+    filters: ["Shake-uri", "Apă proteică", "Lactate de băut", "Vegan", "Cu cafeină"] }
+];
+
+const BAR_ING_STD = "Amestec proteic (proteine din lapte, izolat proteic din zer)";
+window.PRODUCTS = [
+/* ---------- BATOANE ---------- */
+{ id:"baton-cacao-alune", c:"batoane", name:"Baton proteic Cacao & Alune de pădure", size:"60 g", price:11.99, n:[386,33,27,2.8,14,5.2,10,0.45], pp:20,
+  card:"Clasicul care nu dezamăgește. 20 g de proteine.",
+  desc:"Strat moale de cacao, bucăți de alune prăjite și un înveliș subțire de ciocolată cu lapte. E batonul pe care îl iei când nu știi ce să alegi. Fără zahăr adăugat, 20 g de proteine și destul de sățios cât să ajungi liniștit la cină.",
+  ingr:BAR_ING_STD+", înveliș de ciocolată cu lapte fără zahăr adăugat (14%), alune de pădure (8%), fibre solubile de porumb, umectant (glicerol), cacao pudră degresată, emulgator (lecitină de floarea-soarelui), arome, sare, îndulcitor (sucraloză).",
+  alg:"Lapte, alune de pădure. Poate conține alte nuci, arahide, soia.", tags:["Bogat în proteine","Fără zahăr adăugat","Bestseller"] },
+{ id:"baton-caramel-sarat", c:"batoane", name:"Baton proteic Caramel sărat", size:"60 g", price:11.99, n:[379,31,30,3.5,13,6,9,0.9], pp:19,
+  card:"Dulce, sărat, imposibil de lăsat jos.",
+  desc:"Un miez moale cu strat de caramel și un praf de sare de mare deasupra. Contrastul dulce-sărat face din el gustarea perfectă de după-amiază. 19 g de proteine, zero zahăr adăugat.",
+  ingr:BAR_ING_STD+", strat de caramel fără zahăr adăugat (18%), fibre solubile de porumb, înveliș de ciocolată cu lapte, umectant (glicerol), unt de cacao, sare de mare (0,4%), emulgator (lecitină de floarea-soarelui), arome, îndulcitor (sucraloză).",
+  alg:"Lapte. Poate conține nuci, arahide, soia.", tags:["Bogat în proteine","Fără zahăr adăugat"] },
+{ id:"baton-cookie-dough", c:"batoane", name:"Baton proteic Cookie Dough", size:"60 g", price:11.99, n:[388,32,29,3.2,14,6.5,9,0.5], pp:19,
+  card:"Aluat de biscuiți, fără cuptor. 19 g de proteine.",
+  desc:"Gustul de aluat crud pe care îl furai din bol, acum cu bucăți de ciocolată și 19 g de proteine. Textură moale, cremoasă, ușor caramelizată. Pentru cei care nu cresc niciodată de tot.",
+  ingr:BAR_ING_STD+", fibre solubile de porumb, bucăți de ciocolată neagră fără zahăr adăugat (10%), făină de ovăz, unt de cacao, umectant (glicerol), arome naturale de vanilie, sare, emulgator (lecitină de floarea-soarelui), îndulcitor (sucraloză).",
+  alg:"Lapte, ovăz (gluten). Poate conține nuci, arahide.", tags:["Bogat în proteine","Fără zahăr adăugat"] },
+{ id:"baton-arahide-crocante", c:"batoane", name:"Baton proteic Arahide crocante", size:"60 g", price:11.99, n:[398,35,24,3,16,4,9,0.6], pp:21,
+  card:"Cel mai proteic baton al nostru. 21 g.",
+  desc:"Bucăți mari de arahide prăjite, un miez dens și crocant și 21 g de proteine. E batonul preferat după antrenament, când îți trebuie ceva consistent. Mai puțini carbohidrați, mai multă proteină.",
+  ingr:"Amestec proteic (proteine din lapte, izolat proteic din zer, crispies proteice din soia), arahide prăjite (15%), unt de arahide (7%), fibre solubile de porumb, umectant (glicerol), sare, emulgator (lecitină de floarea-soarelui), îndulcitor (sucraloză).",
+  alg:"Lapte, arahide, soia. Poate conține nuci.", tags:["Bogat în proteine","Fără zahăr adăugat","Crocant","După antrenament"] },
+{ id:"baton-ciocolata-alba-zmeura", c:"batoane", name:"Baton proteic Ciocolată albă & Zmeură", size:"60 g", price:11.99, n:[376,31,31,3.9,12,6.8,10,0.4], pp:19,
+  card:"Fructat, cremos, cu bucăți de zmeură.",
+  desc:"Înveliș de ciocolată albă și bucăți de zmeură liofilizată care îi dau o notă acrișoară. Pentru cine vrea un baton mai lejer, mai de vară. 19 g de proteine și fără zahăr adăugat.",
+  ingr:BAR_ING_STD+", înveliș de ciocolată albă fără zahăr adăugat (15%), fibre solubile de porumb, umectant (glicerol), zmeură liofilizată (3%), unt de cacao, arome naturale, emulgator (lecitină de floarea-soarelui), colorant (suc concentrat de sfeclă roșie), îndulcitor (sucraloză).",
+  alg:"Lapte. Poate conține nuci, arahide, soia.", tags:["Bogat în proteine","Fără zahăr adăugat"] },
+{ id:"baton-cocos-ciocolata", c:"batoane", name:"Baton proteic Cocos & Ciocolată", size:"60 g", price:11.99, n:[403,30,27,3.4,17,11,11,0.3], pp:18,
+  card:"Vacanță tropicală în 60 de grame.",
+  desc:"Miez fraged de nucă de cocos, acoperit cu ciocolată neagră. Gustul te duce direct la plajă, proteinele te țin sătul până seara. 18 g de proteine pe baton.",
+  ingr:BAR_ING_STD+", nucă de cocos deshidratată (18%), înveliș de ciocolată neagră fără zahăr adăugat (15%), fibre solubile de porumb, umectant (glicerol), ulei de cocos, emulgator (lecitină de floarea-soarelui), arome, sare, îndulcitor (sucraloză).",
+  alg:"Lapte. Poate conține nuci, arahide, soia.", tags:["Bogat în proteine","Fără zahăr adăugat"] },
+{ id:"baton-brownie", c:"batoane", name:"Baton proteic Brownie dublă ciocolată", size:"60 g", price:11.99, n:[383,33,28,2.9,13,6,11,0.4], pp:20,
+  card:"Pentru pofta serioasă de ciocolată.",
+  desc:"Ciocolată în miez, ciocolată pe exterior și o textură densă de brownie. E cel mai „desert” dintre batoanele noastre, cu 20 g de proteine și 11 g de fibre la 100 g.",
+  ingr:BAR_ING_STD+", înveliș de ciocolată neagră fără zahăr adăugat (16%), fibre solubile de porumb, cacao pudră degresată (6%), umectant (glicerol), unt de cacao, emulgator (lecitină de floarea-soarelui), sare, arome, îndulcitor (sucraloză).",
+  alg:"Lapte. Poate conține nuci, arahide, soia.", tags:["Bogat în proteine","Fără zahăr adăugat","Sursă de fibre"] },
+{ id:"baton-cheesecake-lamaie", c:"batoane", name:"Baton proteic Cheesecake cu lămâie", size:"60 g", price:11.99, n:[376,32,30,3.5,12,6.5,10,0.5], pp:19,
+  card:"Cheesecake la pachet. 19 g de proteine.",
+  desc:"Cremă cu gust de cheesecake, coajă de lămâie și o bază cu bucăți de biscuit. Proaspăt, ușor acrișor, deloc greu. Perfect pentru gustarea de la birou.",
+  ingr:BAR_ING_STD+", fibre solubile de porumb, înveliș de ciocolată albă fără zahăr adăugat (14%), bucăți de biscuit (5%, făină de grâu), umectant (glicerol), pudră de brânză cremă (2%), coajă de lămâie, arome naturale, acidifiant (acid citric), îndulcitor (sucraloză).",
+  alg:"Lapte, grâu (gluten). Poate conține nuci, arahide, soia, ouă.", tags:["Bogat în proteine","Fără zahăr adăugat"] },
+{ id:"baton-fistic", c:"batoane", name:"Baton proteic Fistic", size:"60 g", price:13.99, n:[394,33,25,3.1,16,4.5,9,0.4], pp:20, stock:5,
+  card:"Fistic adevărat, nu doar aromă.",
+  desc:"Cremă de fistic, bucăți de fistic prăjit și un înveliș de ciocolată albă. Un baton premium, pentru momentele în care vrei să te răsfeți fără să renunți la cele 20 g de proteine.",
+  ingr:BAR_ING_STD+", cremă de fistic (10%), înveliș de ciocolată albă fără zahăr adăugat (14%), fistic prăjit (5%), fibre solubile de porumb, umectant (glicerol), emulgator (lecitină de floarea-soarelui), sare, îndulcitor (sucraloză).",
+  alg:"Lapte, fistic. Poate conține alte nuci, arahide, soia.", tags:["Bogat în proteine","Fără zahăr adăugat","Premium"] },
+{ id:"baton-banana-arahide", c:"batoane", name:"Baton proteic Banană & Unt de arahide", size:"60 g", price:11.99, n:[383,32,30,4.2,13,3.8,9,0.5], pp:19,
+  card:"Combinația preferată a sportivilor, acum în baton.",
+  desc:"Banană coaptă și unt de arahide cremos, ca pe o felie de pâine prăjită. Gust natural, textură moale și 19 g de proteine. Bun dimineața, la cafea, sau înainte de alergare.",
+  ingr:BAR_ING_STD+", unt de arahide (12%), fibre solubile de porumb, banană deshidratată (6%), umectant (glicerol), făină de ovăz, arome naturale, sare, emulgator (lecitină de floarea-soarelui), îndulcitor (sucraloză).",
+  alg:"Lapte, arahide, ovăz (gluten). Poate conține nuci, soia.", tags:["Bogat în proteine","Fără zahăr adăugat"] },
+{ id:"baton-espresso", c:"batoane", name:"Baton proteic Espresso", size:"60 g", price:11.99, n:[372,33,28,2.6,12,5.6,10,0.4], pp:20,
+  card:"Cafeaua și gustarea, într-un singur baton.",
+  desc:"Cafea arabica măcinată fin, ciocolată neagră și 20 g de proteine. Conține cafeină naturală din cafea, cam cât jumătate de espresso. Ideal pentru dimineți grăbite.",
+  ingr:BAR_ING_STD+", înveliș de ciocolată neagră fără zahăr adăugat (15%), fibre solubile de porumb, umectant (glicerol), cafea arabica măcinată (2%), unt de cacao, emulgator (lecitină de floarea-soarelui), sare, arome, îndulcitor (sucraloză).",
+  alg:"Lapte. Poate conține nuci, arahide, soia.", tags:["Bogat în proteine","Fără zahăr adăugat","Cu cafeină"],
+  note:"Conține cafeină (aprox. 35 mg/baton). Nu se recomandă copiilor și femeilor însărcinate." },
+{ id:"baton-vegan-cacao-migdale", c:"batoane", name:"Baton proteic Vegan Cacao & Migdale", size:"55 g", price:12.99, n:[391,28,30,4.5,15,3,12,0.5], pp:15,
+  card:"100% vegetal, 15 g de proteine din mazăre și orez.",
+  desc:"Proteine vegetale din mazăre și orez, migdale prăjite și cacao intensă. Fără lapte, fără compromisuri la gust. Bogat în fibre, bun pentru oricine vrea mai multe plante în farfurie.",
+  ingr:"Amestec proteic vegetal (proteine din mazăre, proteine din orez brun), migdale (12%), fibre de cicoare, curmale, cacao pudră (6%), ulei de floarea-soarelui, umectant (glicerol vegetal), sare, îndulcitor (glicozide de steviol).",
+  alg:"Migdale. Poate conține alte nuci, arahide, soia.", tags:["Vegan","Bogat în proteine","Bogat în fibre"] },
+{ id:"baton-vegan-arahide-merisoare", c:"batoane", name:"Baton proteic Vegan Unt de arahide & Merișoare", size:"55 g", price:12.99, n:[388,27,33,6,14,2.5,11,0.6], pp:15,
+  card:"PB&J în variantă vegetală.",
+  desc:"Unt de arahide cremos și merișoare acrișoare, combinația clasică americană. 15 g de proteine vegetale și 11 g de fibre la 100 g. Fără lapte, fără gluten adăugat.",
+  ingr:"Amestec proteic vegetal (proteine din mazăre, proteine din orez brun), unt de arahide (15%), merișoare deshidratate (7%), fibre de cicoare, curmale, umectant (glicerol vegetal), sare, îndulcitor (glicozide de steviol).",
+  alg:"Arahide. Poate conține nuci, soia.", tags:["Vegan","Bogat în proteine","Bogat în fibre"] },
+{ id:"napolitana-alune", c:"batoane", name:"Napolitană proteică crocantă cu alune", size:"40 g", price:8.99, n:[431,30,36,4,17,7,7,0.6], pp:12,
+  card:"Crocantă ca pe vremuri, cu 12 g de proteine.",
+  desc:"Foi crocante de napolitană umplute cu cremă de alune și acoperite cu ciocolată. O porție mai mică, de 40 g, pentru pofta de ceva dulce de la ora 4. Gustul copilăriei, cu mai multă proteină.",
+  ingr:"Cremă proteică (izolat proteic din zer, alune de pădure 8%, ulei de palmier sustenabil RSPO), înveliș de ciocolată cu lapte fără zahăr adăugat (25%), napolitană (făină de grâu, proteine din lapte), îndulcitor (maltitol, sucraloză), emulgator (lecitină de soia), arome.",
+  alg:"Lapte, alune de pădure, grâu (gluten), soia. Poate conține ouă, alte nuci.", tags:["Crocant","Fără zahăr adăugat"],
+  note:"Consumul excesiv poate avea efecte laxative (conține maltitol)." },
+{ id:"baton-cozonac", c:"batoane", name:"Baton proteic Cozonac (ediție limitată)", size:"60 g", price:12.99, n:[388,31,30,3.8,14,5,9,0.4], pp:19, stock:3,
+  card:"Gust de sărbători, 19 g de proteine. Doar iarna.",
+  desc:"Nucă, cacao, coajă de portocală și un strop de rom, ca în cozonacul bunicii. Ediție limitată, disponibilă doar până la epuizarea stocului. Bun ca gustare sau ca mic cadou în pachetul de Moș Crăciun.",
+  ingr:BAR_ING_STD+", miez de nucă (10%), fibre solubile de porumb, înveliș de ciocolată cu lapte fără zahăr adăugat (12%), cacao pudră, umectant (glicerol), coajă de portocală confiată (2%), arome naturale (vanilie, rom), sare, îndulcitor (sucraloză).",
+  alg:"Lapte, nuci. Poate conține arahide, soia.", tags:["Ediție limitată","Bogat în proteine","Fără zahăr adăugat"] },
+
+/* ---------- LACTATE ---------- */
+{ id:"iaurt-natural-0", c:"lactate", sub:"iaurt", name:"Iaurt proteic natural 0%", size:"500 g", price:11.99, n:[58,10,4,4,0.2,0.1,0,0.1], por:"150 g", pp:15, shape:"tub",
+  card:"Baza oricărui mic dejun bun. 15 g de proteine pe porție.",
+  desc:"Iaurt dens, strecurat, fără grăsime și fără zahăr adăugat. Merge cu fructe, granola, miere sau ca bază pentru sosuri. Ambalajul de 500 g ajunge pentru 3 mic dejunuri.",
+  ingr:"Lapte degresat pasteurizat, proteine din lapte, culturi lactice vii.", alg:"Lapte.", store:"2-6°C. După deschidere, se consumă în 3 zile.",
+  tags:["Bogat în proteine","Fără zahăr adăugat","Fără grăsimi"] },
+{ id:"skyr-natural", c:"lactate", sub:"iaurt", name:"Skyr natural", size:"150 g", price:5.49, n:[62,11,4,4,0.2,0.1,0,0.1], por:"150 g", pp:17,
+  card:"Rețeta islandeză. Cremos, dens, 17 g de proteine.",
+  desc:"Skyr-ul e un produs lactat tradițional islandez, mai dens decât iaurtul obișnuit. Gust ușor acrișor, textură de cremă. Cel mai proteic iaurt din gama noastră.",
+  ingr:"Lapte degresat pasteurizat, culturi lactice vii, cheag.", alg:"Lapte.", store:"2-6°C.", tags:["Bogat în proteine","Fără zahăr adăugat","Fără grăsimi"] },
+{ id:"iaurt-capsuni", c:"lactate", sub:"iaurt", name:"Iaurt proteic Căpșuni", size:"150 g", price:5.99, n:[66,10,6,5.5,0.2,0.1,0,0.1], por:"150 g", pp:15,
+  card:"Căpșuni adevărate, 15 g de proteine.",
+  desc:"Iaurt proteic cremos cu bucăți de căpșuni la fund. Îl amesteci, îl mănânci, ai terminat. Bun la birou, după sală sau ca desert ușor.",
+  ingr:"Lapte degresat pasteurizat, preparat de căpșuni (10%: căpșuni, apă, îngroșător pectină, suc concentrat de lămâie), proteine din lapte, culturi lactice vii, îndulcitor (sucraloză).",
+  alg:"Lapte.", store:"2-6°C.", tags:["Bogat în proteine","Fără zahăr adăugat","Fără grăsimi"] },
+{ id:"iaurt-afine", c:"lactate", sub:"iaurt", name:"Iaurt proteic Afine", size:"150 g", price:5.99, n:[68,10,6.2,5.6,0.3,0.2,0,0.1], por:"150 g", pp:15,
+  card:"Afine dulci-acrișoare, 15 g de proteine.",
+  desc:"Strat de afine și iaurt proteic dens deasupra. Gustul e proaspăt, de vară, oricând în an. Fără grăsime, fără zahăr adăugat.",
+  ingr:"Lapte degresat pasteurizat, preparat de afine (10%: afine, apă, îngroșător pectină, suc concentrat de lămâie), proteine din lapte, culturi lactice vii, îndulcitor (sucraloză).",
+  alg:"Lapte.", store:"2-6°C.", tags:["Bogat în proteine","Fără zahăr adăugat"] },
+{ id:"iaurt-vanilie", c:"lactate", sub:"iaurt", name:"Iaurt proteic Vanilie", size:"200 g", price:6.49, n:[63,10,5,4.5,0.3,0.2,0,0.1], por:"200 g", pp:20,
+  card:"Porția mare: 20 g de proteine.",
+  desc:"Iaurt cu vanilie bourbon, cremos ca o budincă. Porția de 200 g aduce 20 g de proteine. Încearcă-l cu fructe de pădure și o mână de nuci.",
+  ingr:"Lapte degresat pasteurizat, proteine din lapte, extract natural de vanilie, culturi lactice vii, îndulcitor (sucraloză).",
+  alg:"Lapte.", store:"2-6°C.", tags:["Bogat în proteine","Fără zahăr adăugat"] },
+{ id:"iaurt-grecesc-2", c:"lactate", sub:"iaurt", name:"Iaurt grecesc proteic 2%", size:"400 g", price:12.49, n:[68,9,3.5,3.5,2,1.3,0,0.1], por:"150 g", pp:14, shape:"tub",
+  card:"Grecesc, cremos, cu doar 2% grăsime.",
+  desc:"Textura bogată a iaurtului grecesc, cu mai puțină grăsime și mai multă proteină. Perfect pentru tzatziki, sosuri pentru salate sau un bol cu miere și nuci.",
+  ingr:"Lapte pasteurizat, proteine din lapte, culturi lactice vii.", alg:"Lapte.", store:"2-6°C. După deschidere, se consumă în 3 zile.",
+  tags:["Bogat în proteine","Fără zahăr adăugat"] },
+{ id:"iaurt-ovaz-mere", c:"lactate", sub:"iaurt", name:"Iaurt proteic Ovăz, Mere & Scorțișoară", size:"180 g", price:6.99, n:[83,9,9,5,1,0.6,1,0.1], por:"180 g", pp:16,
+  card:"Micul dejun complet, gata în 5 secunde.",
+  desc:"Iaurt proteic cu fulgi de ovăz, bucăți de măr și scorțișoară, ca un crumble rece. Te ține sătul toată dimineața. Îl iei din frigider și pleci.",
+  ingr:"Lapte degresat pasteurizat, preparat de măr (8%: măr, apă, scorțișoară, îngroșător pectină), proteine din lapte, fulgi de ovăz (4%), culturi lactice vii, îndulcitor (sucraloză).",
+  alg:"Lapte, ovăz (gluten).", store:"2-6°C.", tags:["Bogat în proteine","Mic dejun","Fără zahăr adăugat"] },
+{ id:"iaurt-soia", c:"lactate", sub:"iaurt", name:"Iaurt vegetal proteic din soia", size:"400 g", price:10.99, n:[60,7,2.5,1,2.2,0.4,1,0.1], por:"150 g", pp:11, shape:"tub",
+  card:"Fără lapte, cu 11 g de proteine pe porție.",
+  desc:"Alternativă vegetală fermentată din soia, cremoasă și cu gust neutru. Bună pentru vegani, pentru cei care evită lactatele sau pentru oricine vrea să varieze. Fără zahăr adăugat.",
+  ingr:"Băutură de soia (apă, boabe de soia decorticate 12%), proteine din soia, citrat de calciu, culturi vii, vitamina B12.",
+  alg:"Soia.", store:"2-6°C.", tags:["Vegan","Fără lactoză","Fără zahăr adăugat"] },
+{ id:"branza-vaci", c:"lactate", sub:"branza", name:"Brânză de vaci proteică 0,5%", size:"250 g", price:8.99, n:[69,13,3,3,0.5,0.3,0,0.1], por:"125 g", pp:16, shape:"tub",
+  card:"Brânza de vaci de la bunica, cu mai multă proteină.",
+  desc:"Brânză de vaci proaspătă, sfărâmicioasă, cu doar 0,5% grăsime. Merge sărată cu verdeață sau dulce cu miere și fructe. Ingredientul perfect pentru clătite și papanași proteici.",
+  ingr:"Lapte degresat pasteurizat, culturi lactice, cheag.", alg:"Lapte.", store:"2-6°C. După deschidere, se consumă în 2 zile.",
+  tags:["Bogat în proteine","Fără grăsimi"] },
+{ id:"cottage-cheese", c:"lactate", sub:"branza", name:"Cottage cheese proteic", size:"200 g", price:8.49, n:[80,13,2.5,2.5,2,1.3,0,0.8], por:"100 g", pp:13, shape:"tub",
+  card:"Boabe cremoase, ușor sărate, 13 g de proteine.",
+  desc:"Boabe de brânză în smântână ușoară, cu un gust fin, ușor sărat. Pe pâine prăjită cu roșii, în salate sau direct din cutie. Gustarea de seară preferată a celor care fac sport.",
+  ingr:"Brânză proaspătă din lapte degresat, smântână (lapte), sare.", alg:"Lapte.", store:"2-6°C.", tags:["Bogat în proteine"] },
+{ id:"quark", c:"lactate", sub:"branza", name:"Quark proteic (brânză cremoasă)", size:"500 g", price:13.99, n:[64,12,3.5,3.5,0.2,0.1,0,0.1], por:"150 g", pp:18, shape:"tub",
+  card:"Cremă fină de brânză, bună la orice.",
+  desc:"Brânză proaspătă, fină, cu textură de cremă. Baza ideală pentru cheesecake proteic, creme de tartinat sau un bol dulce cu fructe. 18 g de proteine la 150 g.",
+  ingr:"Lapte degresat pasteurizat, culturi lactice, cheag.", alg:"Lapte.", store:"2-6°C. După deschidere, se consumă în 3 zile.",
+  tags:["Bogat în proteine","Fără grăsimi","Pentru gătit"] },
+{ id:"mozzarella-light", c:"lactate", sub:"branza", name:"Mozzarella light proteică", size:"125 g", price:9.49, n:[172,24,1,1,8,5.3,0,0.7], por:"60 g", pp:14, shape:"bag", stock:0,
+  card:"Mozzarella cu jumătate din grăsime.",
+  desc:"Mozzarella moale, cu gust lăptos, cu mai puține grăsimi și mai multe proteine decât varianta clasică. Perfectă pentru salata caprese, pizza de casă sau un sandviș cald.",
+  ingr:"Lapte parțial degresat pasteurizat, sare, cheag, culturi lactice. Lichid de conservare: apă, sare.", alg:"Lapte.", store:"2-6°C. Greutate netă scursă: 125 g.",
+  tags:["Bogat în proteine","Light"] },
+{ id:"cascaval-light", c:"lactate", sub:"branza", name:"Cașcaval light felii", size:"150 g", price:14.99, n:[242,33,0.5,0.5,12,8,0,1.6], por:"30 g", pp:10, shape:"bag",
+  card:"Felii gata tăiate, 10 g de proteine în 2 felii.",
+  desc:"Cașcaval maturat, cu 12% grăsime și 33% proteine. Se topește frumos în toast și omletă. Feliile sunt separate, ca să nu se lipească între ele.",
+  ingr:"Lapte parțial degresat pasteurizat, sare, cheag, culturi lactice, conservant (clorură de calciu).", alg:"Lapte.", store:"2-6°C. După deschidere, se consumă în 5 zile.",
+  tags:["Bogat în proteine","Light"] },
+{ id:"budinca-ciocolata", c:"lactate", sub:"desert", name:"Budincă proteică Ciocolată", size:"200 g", price:6.99, n:[84,10,7,2,1.5,1,1,0.15], por:"200 g", pp:20,
+  card:"Desert de ciocolată cu 20 g de proteine.",
+  desc:"Budincă de ciocolată fină, cremoasă, care se mănâncă cu lingurița direct din pahar. Gust de desert adevărat, cu doar 168 kcal pe porție. Pentru pofta de seară.",
+  ingr:"Lapte degresat, proteine din lapte, cacao degresată (2%), smântână (lapte), amidon modificat, îngroșători (caragenan, gumă guar), sare, îndulcitor (sucraloză).",
+  alg:"Lapte.", store:"2-6°C.", tags:["Bogat în proteine","Fără zahăr adăugat","Desert"] },
+{ id:"desert-caramel-sarat", c:"lactate", sub:"desert", name:"Desert proteic Caramel sărat", size:"200 g", price:6.99, n:[83,10,7,2.2,1.5,1,0.5,0.3], por:"200 g", pp:20,
+  card:"Caramel sărat, la lingură. 20 g de proteine.",
+  desc:"Cremă de caramel cu o notă fină de sare, mătăsoasă și dulce fără zahăr adăugat. 166 kcal pe tot paharul. Un desert pe care îl poți mânca în fiecare seară.",
+  ingr:"Lapte degresat, proteine din lapte, smântână (lapte), amidon modificat, aromă de caramel, sare (0,3%), colorant (caramel simplu), îngroșători (caragenan, gumă guar), îndulcitor (sucraloză).",
+  alg:"Lapte.", store:"2-6°C.", tags:["Bogat în proteine","Fără zahăr adăugat","Desert"] },
+
+/* ---------- COOKIES & SNACKURI ---------- */
+{ id:"cookie-chocolate-chip", c:"snackuri", sub:"dulce", name:"Cookie proteic Chocolate Chip", size:"75 g", price:8.99, n:[422,20,40,5,18,8,10,0.8], por:"75 g", pp:15, shape:"cookie",
+  card:"Moale la mijloc, cu bucăți mari de ciocolată.",
+  desc:"Cookie-ul clasic american, copt să rămână moale în interior. Bucăți generoase de ciocolată neagră și 15 g de proteine. Încălzește-l 10 secunde la microunde și o să ne mulțumești.",
+  ingr:"Amestec proteic (proteine din lapte, izolat proteic din zer), făină de grâu, fibre solubile de porumb, unt, bucăți de ciocolată neagră fără zahăr adăugat (12%), ouă, îndulcitor (eritritol, sucraloză), afânător (bicarbonat de sodiu), extract de vanilie, sare.",
+  alg:"Lapte, grâu (gluten), ouă. Poate conține nuci, arahide, soia.", tags:["Bogat în proteine","Fără zahăr adăugat","Bestseller"] },
+{ id:"cookie-dubla-ciocolata", c:"snackuri", sub:"dulce", name:"Cookie proteic Dublă ciocolată", size:"75 g", price:8.99, n:[420,21,38,4.8,18,8.5,11,0.8], por:"75 g", pp:16, shape:"cookie",
+  card:"Ciocolată în aluat, ciocolată în bucăți.",
+  desc:"Aluat de cacao intensă și bucăți de ciocolată albă și neagră. E cookie-ul pentru serile în care vrei ceva cu adevărat ciocolatos. 16 g de proteine și 11% fibre.",
+  ingr:"Amestec proteic (proteine din lapte, izolat proteic din zer), făină de grâu, fibre solubile de porumb, unt, bucăți de ciocolată fără zahăr adăugat (14%), cacao pudră degresată (6%), ouă, îndulcitor (eritritol, sucraloză), afânător, sare.",
+  alg:"Lapte, grâu (gluten), ouă. Poate conține nuci, arahide, soia.", tags:["Bogat în proteine","Fără zahăr adăugat","Sursă de fibre"] },
+{ id:"cookie-unt-arahide", c:"snackuri", sub:"dulce", name:"Cookie proteic Unt de arahide", size:"75 g", price:8.99, n:[430,23,35,5,20,5,9,0.9], por:"75 g", pp:17, shape:"cookie",
+  card:"Cel mai proteic cookie al nostru. 17 g.",
+  desc:"Unt de arahide prăjite, un praf de sare și o textură care se sfărâmă perfect. Gust intens, sățios, cu 17 g de proteine. Merge excelent cu un pahar de lapte.",
+  ingr:"Amestec proteic (proteine din lapte, izolat proteic din zer), unt de arahide (18%), făină de grâu, fibre solubile de porumb, ouă, unt, îndulcitor (eritritol, sucraloză), afânător, sare.",
+  alg:"Arahide, lapte, grâu (gluten), ouă. Poate conține nuci, soia.", tags:["Bogat în proteine","Fără zahăr adăugat"] },
+{ id:"cookie-ovaz-stafide", c:"snackuri", sub:"dulce", name:"Cookie proteic Ovăz & Stafide", size:"75 g", price:8.99, n:[396,19,44,9,14,5,9,0.7], por:"75 g", pp:14, shape:"cookie",
+  card:"Ca la bunica, cu 14 g de proteine.",
+  desc:"Fulgi de ovăz, stafide și un strop de scorțișoară. Un cookie rustic, cald, perfect la ceai sau la cafeaua de dimineață. Dulceața vine din stafide.",
+  ingr:"Amestec proteic (proteine din lapte, izolat proteic din zer), fulgi de ovăz (20%), stafide (10%), făină de grâu, unt, fibre solubile de porumb, ouă, scorțișoară, îndulcitor (eritritol), afânător, sare.",
+  alg:"Lapte, ovăz și grâu (gluten), ouă. Poate conține nuci, arahide, soia.", tags:["Bogat în proteine","Mic dejun"] },
+{ id:"cookie-vegan-alune", c:"snackuri", sub:"dulce", name:"Cookie vegan Ciocolată & Alune", size:"60 g", price:9.49, n:[431,18,42,6,19,4,10,0.6], por:"60 g", pp:11, shape:"cookie",
+  card:"100% vegetal, fără lapte și fără ouă.",
+  desc:"Proteină din mazăre, alune de pădure prăjite și bucăți de ciocolată neagră. Nimeni nu ghicește că e vegan până nu citește eticheta. 11 g de proteine pe cookie.",
+  ingr:"Proteine din mazăre, făină de grâu, alune de pădure (12%), ulei de cocos, bucăți de ciocolată neagră vegană (10%), fibre de cicoare, îndulcitor (eritritol), afânător, sare.",
+  alg:"Grâu (gluten), alune de pădure. Poate conține alte nuci, arahide, soia.", tags:["Vegan","Bogat în proteine","Fără zahăr adăugat"] },
+{ id:"mini-cookies-cacao", c:"snackuri", sub:"dulce", name:"Mini cookies proteice Cacao", size:"50 g", price:6.99, n:[422,25,45,6,14,7,8,0.9], por:"50 g", pp:13,
+  card:"Pungă de mini cookies crocante, 13 g de proteine.",
+  desc:"Biscuiți mici și crocanți de cacao, perfecți de ronțăit la birou sau în mașină. Pungă de 50 g, o porție completă. Ușor de băgat în orice buzunar.",
+  ingr:"Amestec proteic (izolat proteic din zer, proteine din lapte), făină de grâu, cacao pudră (8%), ulei de floarea-soarelui, fibre solubile de porumb, îndulcitor (eritritol, sucraloză), afânător, sare.",
+  alg:"Lapte, grâu (gluten). Poate conține ouă, nuci, arahide, soia.", tags:["Bogat în proteine","Crocant","Fără zahăr adăugat"] },
+{ id:"chips-smantana-ceapa", c:"snackuri", name:"Chips proteice Smântână & Ceapă", size:"50 g", price:7.49, n:[416,40,35,3,12,1.5,4,2.2], por:"50 g", pp:20,
+  card:"Chips-uri cu 20 g de proteine pe pungă.",
+  desc:"Coapte, nu prăjite, cu gust cremos de smântână și ceapă verde. Au crocantul chips-urilor clasice și de 4 ori mai multă proteină. Seara de film nu a fost niciodată mai bună.",
+  ingr:"Proteine din lapte, proteine din soia, amidon de cartofi, ulei de floarea-soarelui, condiment smântână și ceapă (pudră de smântână din lapte, ceapă, sare, arpagic, arome), sare.",
+  alg:"Lapte, soia. Poate conține grâu, muștar, țelină.", tags:["Bogat în proteine","Sărat","Crocant"] },
+{ id:"chips-paprika", c:"snackuri", name:"Chips proteice Paprika", size:"50 g", price:7.49, n:[411,40,36,3.5,11,1.4,4,2], por:"50 g", pp:20,
+  card:"Paprika afumată, crocant maxim.",
+  desc:"Gustul de paprika dulce și afumată pe care îl știi, pe un chips copt cu 20 g de proteine. Pentru pofta de sărat fără să mai numeri pungile.",
+  ingr:"Proteine din lapte, proteine din soia, amidon de cartofi, ulei de floarea-soarelui, condiment paprika (paprika afumată, sare, usturoi, ceapă, arome), sare.",
+  alg:"Lapte, soia. Poate conține grâu, muștar, țelină.", tags:["Bogat în proteine","Sărat","Crocant"] },
+{ id:"chips-sare-mare", c:"snackuri", name:"Chips proteice Sare de mare", size:"50 g", price:7.49, n:[406,41,36,2,10,1.2,4,1.8], por:"50 g", pp:21,
+  card:"Simplu, sărat, cu 21 g de proteine.",
+  desc:"Cel mai simplu gust, pentru puriști. Chips copt, crocant, cu un praf de sare de mare. Bun singur sau cu un dip de iaurt grecesc.",
+  ingr:"Proteine din lapte, proteine din soia, amidon de cartofi, ulei de floarea-soarelui, sare de mare (1,8%).",
+  alg:"Lapte, soia. Poate conține grâu, muștar, țelină.", tags:["Bogat în proteine","Sărat","Crocant"] },
+{ id:"pufuleti", c:"snackuri", name:"Pufuleți proteici", size:"40 g", price:5.99, n:[400,38,42,2,8,1,4,1.4], por:"40 g", pp:15,
+  card:"Pufuleții copilăriei, cu 15 g de proteine.",
+  desc:"Ușori, aerați și ușor sărați, exact cum îi știi. Diferența e că au de 4 ori mai multă proteină decât pufuleții clasici. O pungă e o porție completă.",
+  ingr:"Grișat de porumb, proteine din lapte, proteine din mazăre, ulei de floarea-soarelui, sare.",
+  alg:"Lapte. Poate conține soia, grâu.", tags:["Bogat în proteine","Sărat","Fără gluten adăugat"] },
+{ id:"covrigei", c:"snackuri", name:"Covrigei proteici", size:"60 g", price:6.99, n:[386,30,50,2,6,0.8,6,2.5], por:"60 g", pp:18,
+  card:"Covrigei crocanți cu 18 g de proteine.",
+  desc:"Covrigei rumeniți la cuptor, cu sare grunjoasă deasupra. Gustarea perfectă la bere sau la un meci, cu mult mai multă proteină decât varianta clasică.",
+  ingr:"Făină de grâu, proteine din grâu, proteine din lapte, ulei de floarea-soarelui, sare grunjoasă (2%), drojdie, agent de tratare (hidroxid de sodiu).",
+  alg:"Grâu (gluten), lapte. Poate conține susan, soia.", tags:["Bogat în proteine","Sărat","Crocant"] },
+{ id:"crispies-ciocolata", c:"snackuri", sub:"dulce", name:"Crispies proteice Ciocolată", size:"300 g", price:34.99, n:[391,55,30,3,5,3,3,0.8], por:"40 g", pp:22, shape:"box",
+  card:"Cereale de mic dejun cu 22 g de proteine pe bol.",
+  desc:"Bile crocante de proteină cu cacao care rămân crocante și în lapte. Bune la micul dejun, în iaurt sau direct din cutie. Cutia de 300 g are aproximativ 7 porții.",
+  ingr:"Proteine din lapte, izolat proteic din zer, amidon de tapioca, cacao pudră degresată (5%), aromă naturală, sare, îndulcitor (sucraloză).",
+  alg:"Lapte. Poate conține soia.", tags:["Bogat în proteine","Mic dejun","Fără zahăr adăugat"] },
+{ id:"granola-ciocolata", c:"snackuri", sub:"dulce", name:"Granola proteică Ciocolată", size:"400 g", price:29.99, n:[419,25,40,5,15,3,12,0.2], por:"45 g", pp:11, shape:"box",
+  card:"Granola crocantă, coaptă în bucăți mari.",
+  desc:"Fulgi de ovăz, migdale, crispies proteice și cacao, copți în ciorchini mari și crocanți. Pune o mână peste iaurt proteic și ai un mic dejun cu peste 25 g de proteine.",
+  ingr:"Fulgi de ovăz (40%), crispies proteice (proteine din soia, orez), migdale (10%), fibre de cicoare, ulei de cocos, cacao pudră (4%), sirop de cicoare, sare.",
+  alg:"Ovăz (gluten), soia, migdale. Poate conține alte nuci, arahide, lapte.", tags:["Bogat în proteine","Bogat în fibre","Vegan"] },
+{ id:"mix-nuci-edamame", c:"snackuri", name:"Mix proteic de nuci & edamame", size:"150 g", price:19.99, n:[584,30,20,4,40,5,12,0.5], por:"30 g", pp:9,
+  card:"Nuci, migdale și edamame crocant.",
+  desc:"Un mix de migdale, caju, edamame prăjit și crispies proteice. Grăsimi bune, proteine și fibre, într-o pungă cu fermoar. O mână (30 g) e o porție.",
+  ingr:"Migdale (30%), edamame prăjit (soia, 25%), nuci caju (20%), crispies proteice (proteine din soia, orez), semințe de dovleac, sare de mare.",
+  alg:"Migdale, caju, soia. Poate conține arahide, alte nuci, susan.", tags:["Vegan","Bogat în proteine","Bogat în fibre"] },
+{ id:"jerky-vita", c:"snackuri", name:"Jerky de vită Original", size:"40 g", price:16.99, n:[260,50,6,4,4,1.6,0,4.5], por:"40 g", pp:20,
+  card:"Carne de vită uscată, 20 g de proteine.",
+  desc:"Fâșii subțiri de carne de vită marinate și uscate încet. Gust intens, afumat, ușor dulce. Gustarea perfectă pentru drumeții, drumuri lungi sau după sală.",
+  ingr:"Carne de vită (din 130 g carne de vită pentru 100 g produs), sos de soia (apă, boabe de soia, grâu, sare), zahăr, oțet, usturoi, piper, fum lichid, conservant (nitrit de sodiu).",
+  alg:"Soia, grâu (gluten).", tags:["Bogat în proteine","Sărat"], note:"Conținut ridicat de sare. Recomandăm o porție pe zi." },
+
+/* ---------- PUDRE ---------- */
+{ id:"whey-ciocolata", c:"pudre", sub:"whey", name:"Whey Ciocolată", size:"1 kg", price:129.99, n:[390,75,8,5,6,3.5,2,0.5], por:"30 g", pp:23,
+  card:"Shake de ciocolată cremos, 23 g de proteine.",
+  desc:"Proteină din zer cu cacao olandeză, care se dizolvă în câteva secunde, fără cocoloașe. Cu lapte are gust de milkshake, cu apă e ușor și răcoritor. Punga de 1 kg are aproximativ 33 de porții.",
+  use:"Amestecă 30 g (o lingură-măsură) cu 250 ml apă sau lapte.",
+  ingr:"Concentrat proteic din zer (din lapte, 88%), cacao pudră degresată (8%), aromă, îngroșător (gumă xantan), emulgator (lecitină de floarea-soarelui), îndulcitor (sucraloză).",
+  alg:"Lapte. Poate conține soia, ouă, gluten.", tags:["Bogat în proteine","Bestseller"] },
+{ id:"whey-vanilie", c:"pudre", sub:"whey", name:"Whey Vanilie", size:"1 kg", price:129.99, n:[386,76,7,5.5,6,3.8,0,0.4], por:"30 g", pp:23,
+  card:"Vanilie fină, merge în orice rețetă.",
+  desc:"Cea mai versatilă aromă: bună în shake, în terci de ovăz, în clătite sau în smoothie cu banană. Gust de vanilie cremos, nu artificial. 23 g de proteine pe porție.",
+  use:"Amestecă 30 g cu 250 ml apă sau lapte.",
+  ingr:"Concentrat proteic din zer (din lapte, 95%), aromă naturală de vanilie, îngroșător (gumă xantan), emulgator (lecitină de floarea-soarelui), îndulcitor (sucraloză).",
+  alg:"Lapte. Poate conține soia, ouă, gluten.", tags:["Bogat în proteine"] },
+{ id:"whey-capsuni", c:"pudre", sub:"whey", name:"Whey Căpșuni", size:"1 kg", price:129.99, n:[386,75,8,6,6,3.8,0,0.4], por:"30 g", pp:23,
+  card:"Milkshake de căpșuni, fără zahăr adăugat.",
+  desc:"Gust de căpșuni coapte, ca milkshake-ul de la cofetărie. Răcoritor cu apă rece, bogat cu lapte. Perfect pentru shake-ul de vară după sală.",
+  use:"Amestecă 30 g cu 250 ml apă sau lapte.",
+  ingr:"Concentrat proteic din zer (din lapte, 93%), pudră de căpșuni (2%), arome, colorant (suc concentrat de sfeclă roșie), îngroșător (gumă xantan), emulgator (lecitină de floarea-soarelui), îndulcitor (sucraloză).",
+  alg:"Lapte. Poate conține soia, ouă, gluten.", tags:["Bogat în proteine","Fără zahăr adăugat"] },
+{ id:"whey-caramel-sarat", c:"pudre", sub:"whey", name:"Whey Caramel sărat", size:"1 kg", price:134.99, n:[386,74,9,6,6,3.7,0,0.9], por:"30 g", pp:22,
+  card:"Dulce, sărat și foarte cremos.",
+  desc:"Caramel cu o notă fină de sare, aroma care creează dependență. Excelent amestecat cu cafea rece pentru un iced latte proteic. 22 g de proteine pe porție.",
+  use:"Amestecă 30 g cu 250 ml apă, lapte sau cafea rece.",
+  ingr:"Concentrat proteic din zer (din lapte, 92%), arome, sare de mare (0,5%), colorant (caramel simplu), îngroșător (gumă xantan), emulgator (lecitină de floarea-soarelui), îndulcitor (sucraloză).",
+  alg:"Lapte. Poate conține soia, ouă, gluten.", tags:["Bogat în proteine"] },
+{ id:"whey-cookies-cream", c:"pudre", sub:"whey", name:"Whey Cookies & Cream", size:"1 kg", price:134.99, n:[388,73,10,6,6,3.7,1,0.5], por:"30 g", pp:22,
+  card:"Cu bucăți de biscuit în shake.",
+  desc:"Bază de vanilie cu bucăți adevărate de biscuit de cacao. Fiecare înghițitură are ceva de mestecat. Aroma preferată a celor care vor ca shake-ul să fie un mic desert.",
+  use:"Amestecă 30 g cu 250 ml lapte rece.",
+  ingr:"Concentrat proteic din zer (din lapte, 88%), bucăți de biscuit de cacao (5%: făină de grâu, cacao, ulei vegetal), arome, îngroșător (gumă xantan), emulgator (lecitină de floarea-soarelui), îndulcitor (sucraloză).",
+  alg:"Lapte, grâu (gluten). Poate conține soia, ouă.", tags:["Bogat în proteine"] },
+{ id:"izolat-neutru", c:"pudre", sub:"izolat", name:"Whey izolat Neutru", size:"900 g", price:179.99, n:[373,90,2,1.5,0.5,0.3,0,0.4], por:"30 g", pp:27,
+  card:"27 g de proteine, fără aromă, fără îndulcitor.",
+  desc:"Izolat proteic din zer cu 90% proteine și aproape fără lactoză, grăsimi sau carbohidrați. Fără gust, deci îl pui oriunde: în supe cremă, în aluaturi, în iaurt sau în smoothie. Pentru cei care vor control total.",
+  use:"Adaugă 30 g în băuturi sau rețete. Nu fierbe direct.",
+  ingr:"Izolat proteic din zer (din lapte, 99%), emulgator (lecitină de floarea-soarelui).",
+  alg:"Lapte. Poate conține soia, ouă, gluten.", tags:["Bogat în proteine","Fără zahăr adăugat","Fără arome","Pentru gătit"] },
+{ id:"izolat-ciocolata", c:"pudre", sub:"izolat", name:"Whey izolat Ciocolată", size:"900 g", price:179.99, n:[374,85,4,1.5,1.5,1,2,0.5], por:"30 g", pp:26,
+  card:"Izolat de ciocolată, ușor și curat.",
+  desc:"Izolat proteic cu 26 g de proteine pe porție și doar 1,2 g de carbohidrați. Gust de ciocolată, textură fină, ușor de digerat. Potrivit pentru cei care urmăresc atent macronutrienții.",
+  use:"Amestecă 30 g cu 250 ml apă sau lapte.",
+  ingr:"Izolat proteic din zer (din lapte, 92%), cacao pudră degresată (6%), aromă, îngroșător (gumă xantan), emulgator (lecitină de floarea-soarelui), îndulcitor (sucraloză).",
+  alg:"Lapte. Poate conține soia, ouă, gluten.", tags:["Bogat în proteine","Low carb"] },
+{ id:"izolat-fistic", c:"pudre", sub:"izolat", name:"Whey izolat Fistic", size:"900 g", price:189.99, n:[367,85,4,2,1.2,0.6,0,0.4], por:"30 g", pp:26,
+  card:"Gust de înghețată de fistic. 26 g de proteine.",
+  desc:"Aroma noastră premium, cu gust de înghețată de fistic italiană. Izolat proteic pur, ușor, cu foarte puține grăsimi. Pentru cei care vor ceva diferit de ciocolată și vanilie.",
+  use:"Amestecă 30 g cu 250 ml lapte rece.",
+  ingr:"Izolat proteic din zer (din lapte, 96%), aromă naturală de fistic, colorant (clorofilă), îngroșător (gumă xantan), emulgator (lecitină de floarea-soarelui), îndulcitor (sucraloză).",
+  alg:"Lapte, fistic. Poate conține soia, ouă, gluten.", tags:["Bogat în proteine","Premium"] },
+{ id:"cazeina-ciocolata", c:"pudre", sub:"cazeina", name:"Cazeină micelară Ciocolată", size:"900 g", price:159.99, n:[364,78,7,2,2,1.2,3,0.6], por:"30 g", pp:23,
+  card:"Proteina de seară, cu eliberare lentă.",
+  desc:"Cazeina se digeră mai lent decât proteina din zer, așa că e potrivită seara sau între mese lungi. Amestecată cu mai puțin lichid devine o cremă groasă de ciocolată, ca o budincă. 23 g de proteine pe porție.",
+  use:"Amestecă 30 g cu 250 ml lapte pentru shake sau cu 100 ml pentru budincă.",
+  ingr:"Cazeină micelară (din lapte, 89%), cacao pudră degresată (7%), aromă, îngroșător (gumă guar), emulgator (lecitină de floarea-soarelui), îndulcitor (sucraloză).",
+  alg:"Lapte. Poate conține soia, ouă, gluten.", tags:["Bogat în proteine","Seara"] },
+{ id:"vegana-ciocolata", c:"pudre", sub:"vegan", name:"Proteină vegană Ciocolată", size:"1 kg", price:139.99, n:[395,72,8,1.5,7,1.5,6,1.5], por:"30 g", pp:22,
+  card:"Mazăre și orez brun, 22 g de proteine vegetale.",
+  desc:"Amestec de proteine din mazăre și orez brun, cu cacao și un gust surprinzător de cremos pentru o proteină vegetală. Fără lapte, fără soia. Bun pentru vegani și pentru cei care nu tolerează lactatele.",
+  use:"Amestecă 30 g cu 300 ml băutură vegetală sau apă.",
+  ingr:"Izolat proteic din mazăre (55%), proteine din orez brun (25%), cacao pudră (12%), aromă naturală, îngroșător (gumă xantan), sare, îndulcitor (glicozide de steviol).",
+  alg:"Fără alergeni majori. Poate conține soia, lapte, gluten.", tags:["Vegan","Bogat în proteine","Fără lactoză","Sursă de fibre"] },
+{ id:"vegana-vanilie", c:"pudre", sub:"vegan", name:"Proteină vegană Vanilie", size:"1 kg", price:139.99, n:[393,74,6,1,7,1.3,5,1.4], por:"30 g", pp:22,
+  card:"Vanilie vegetală, cremoasă și blândă.",
+  desc:"Aceeași formulă din mazăre și orez brun, cu vanilie naturală. Perfectă în smoothie verde, în terci sau în clătite vegane. 22 g de proteine pe porție, fără lactoză.",
+  use:"Amestecă 30 g cu 300 ml băutură vegetală sau apă.",
+  ingr:"Izolat proteic din mazăre (60%), proteine din orez brun (28%), aromă naturală de vanilie, fibre de cicoare, îngroșător (gumă xantan), sare, îndulcitor (glicozide de steviol).",
+  alg:"Fără alergeni majori. Poate conține soia, lapte, gluten.", tags:["Vegan","Bogat în proteine","Fără lactoză"] },
+{ id:"colagen-neutru", c:"pudre", sub:"colagen", name:"Peptide de colagen Neutru", size:"300 g", price:99.99, n:[368,92,0,0,0,0,0,1], por:"10 g", pp:9, shape:"jar",
+  card:"Se dizolvă în cafea, fără gust.",
+  desc:"Peptide de colagen hidrolizat, fără gust și fără miros, care se dizolvă complet în cafea, ceai sau apă. O lingură (10 g) aduce 9 g de proteine. Colagenul nu conține toți aminoacizii esențiali, deci e un complement, nu o sursă unică de proteine.",
+  use:"Dizolvă 10 g în orice băutură caldă sau rece.",
+  ingr:"Peptide de colagen hidrolizat din piele de bovină (100%).", alg:"Fără alergeni majori.", tags:["Bogat în proteine","Fără arome","Fără zahăr adăugat"] },
+{ id:"mix-clatite", c:"pudre", sub:"mix", name:"Mix clătite proteice", size:"500 g", price:39.99, n:[366,40,35,3,6,2,6,1.2], por:"50 g", pp:20, shape:"box", food:1,
+  card:"Clătite pufoase cu 20 g de proteine, doar adaugi apă.",
+  desc:"Amesteci 50 g de mix cu apă sau lapte și ai 3 clătite pufoase în 5 minute. Gust neutru, ușor dulce, perfect cu fructe, iaurt sau unt de arahide. Punga are 10 porții.",
+  use:"Amestecă 50 g cu 80 ml apă sau lapte, lasă 2 minute, apoi coace în tigaie.",
+  ingr:"Făină de ovăz (35%), concentrat proteic din zer (din lapte), albuș de ou pudră, făină de grâu integrală, afânător (bicarbonat de sodiu), aromă de vanilie, sare, îndulcitor (sucraloză).",
+  alg:"Lapte, ouă, ovăz și grâu (gluten). Poate conține soia, nuci.", tags:["Bogat în proteine","Mic dejun","Pentru gătit"] },
+{ id:"terci-ovaz", c:"pudre", sub:"mix", name:"Terci de ovăz proteic Ciocolată", size:"1 kg", price:59.99, n:[399,30,50,4,7,2,8,0.3], por:"60 g", pp:18, shape:"box", food:1,
+  card:"Micul dejun cald în 2 minute. 18 g de proteine.",
+  desc:"Fulgi fini de ovăz cu proteină din zer și cacao. Torni apă fierbinte sau lapte, amesteci și ai un bol cremos de ciocolată care te ține sătul până la prânz. Cutia are aproximativ 16 porții.",
+  use:"Amestecă 60 g cu 150 ml apă fierbinte sau lapte cald. Lasă 2 minute.",
+  ingr:"Fulgi de ovăz integral (65%), concentrat proteic din zer (din lapte, 25%), cacao pudră (6%), fibre de cicoare, aromă, sare, îndulcitor (sucraloză).",
+  alg:"Ovăz (gluten), lapte. Poate conține soia, nuci.", tags:["Bogat în proteine","Mic dejun","Bogat în fibre"] },
+{ id:"pachet-degustare-whey", c:"pudre", sub:"whey", name:"Pachet degustare Whey (10 plicuri)", size:"10 x 30 g", price:39.99, n:[388,75,8,5.5,6,3.7,1,0.5], por:"30 g", pp:23, shape:"box", pack:1,
+  card:"5 arome, 10 shake-uri. Afli ce-ți place.",
+  desc:"Câte 2 plicuri din fiecare aromă: Ciocolată, Vanilie, Căpșuni, Caramel sărat și Cookies & Cream. Ideal ca să alegi aroma preferată înainte de punga mare sau ca să ai plicuri la tine în geanta de sală.",
+  use:"Un plic (30 g) la 250 ml apă sau lapte.",
+  ingr:"Vezi ingredientele fiecărei arome. Valorile din tabel sunt media celor 5 arome.",
+  alg:"Lapte, grâu (gluten, în aroma Cookies & Cream). Poate conține soia, ouă.", tags:["Pachet degustare","Bogat în proteine","Cadou"] },
+
+/* ---------- BĂUTURI ---------- */
+{ id:"shake-ciocolata", c:"bauturi", sub:"shake", name:"Shake proteic Ciocolată", size:"330 ml", price:9.99, n:[48,7.6,3,2.8,0.5,0.3,0.5,0.15], por:"330 ml", pp:25, ml:1,
+  card:"25 g de proteine, gata de băut.",
+  desc:"Shake de ciocolată cremos, gata făcut, fără shaker și fără vase de spălat. 25 g de proteine și doar 158 kcal pe sticlă. Se bea cel mai bine rece, direct din frigider.",
+  ingr:"Lapte degresat, proteine din lapte, cacao pudră degresată (1,2%), stabilizatori (carrageenan, celuloză), aromă, sare, îndulcitor (sucraloză), enzimă lactază.",
+  alg:"Lapte.", store:"La temperatura camerei. După deschidere, la frigider, se consumă în 24 de ore.", tags:["Bogat în proteine","Fără zahăr adăugat","Bestseller"] },
+{ id:"shake-vanilie", c:"bauturi", sub:"shake", name:"Shake proteic Vanilie", size:"330 ml", price:9.99, n:[46,7.6,3,2.8,0.4,0.3,0,0.15], por:"330 ml", pp:25, ml:1,
+  card:"Vanilie cremoasă, 25 g de proteine.",
+  desc:"Gust fin de vanilie, ca un milkshake fără zahăr adăugat. Perfect după sală sau în locul unei gustări dulci de după-amiază. Sticla încape în orice rucsac.",
+  ingr:"Lapte degresat, proteine din lapte, stabilizatori (carrageenan, celuloză), aromă naturală de vanilie, sare, îndulcitor (sucraloză), enzimă lactază.",
+  alg:"Lapte.", store:"La temperatura camerei. După deschidere, la frigider, se consumă în 24 de ore.", tags:["Bogat în proteine","Fără zahăr adăugat"] },
+{ id:"shake-capsuni", c:"bauturi", sub:"shake", name:"Shake proteic Căpșuni", size:"330 ml", price:9.99, n:[47,7.6,3.2,3,0.4,0.3,0,0.15], por:"330 ml", pp:25, ml:1,
+  card:"Milkshake de căpșuni la sticlă.",
+  desc:"Gust de căpșuni dulci și o textură catifelată. 25 g de proteine, fără zahăr adăugat. Preferatul celor care nu sunt fani ai ciocolatei.",
+  ingr:"Lapte degresat, proteine din lapte, stabilizatori (carrageenan, celuloză), arome, colorant (carmin), sare, îndulcitor (sucraloză), enzimă lactază.",
+  alg:"Lapte.", store:"La temperatura camerei. După deschidere, la frigider, se consumă în 24 de ore.", tags:["Bogat în proteine","Fără zahăr adăugat"] },
+{ id:"shake-banana", c:"bauturi", sub:"shake", name:"Shake proteic Banană", size:"330 ml", price:9.99, n:[48,7.6,3.5,3.2,0.4,0.3,0,0.15], por:"330 ml", pp:25, ml:1,
+  card:"Banană coaptă, 25 g de proteine.",
+  desc:"Gust de banană coaptă, ca un smoothie făcut acasă. Bun dimineața, alături de cafea, sau înainte de antrenament când nu ai timp de mâncat.",
+  ingr:"Lapte degresat, proteine din lapte, stabilizatori (carrageenan, celuloză), arome naturale, sare, îndulcitor (sucraloză), enzimă lactază.",
+  alg:"Lapte.", store:"La temperatura camerei. După deschidere, la frigider, se consumă în 24 de ore.", tags:["Bogat în proteine","Fără zahăr adăugat"] },
+{ id:"iced-latte", c:"bauturi", sub:"shake", name:"Iced Latte proteic", size:"250 ml", price:8.99, n:[49,8,3,2.5,0.6,0.4,0,0.12], por:"250 ml", pp:20, ml:1, shape:"can",
+  card:"Cafeaua de dimineață, cu 20 g de proteine.",
+  desc:"Espresso arabica și lapte, gata de băut rece. Conține aproximativ 80 mg de cafeină, cam cât un espresso dublu mic. Înlocuiește latte-ul de la cafenea și îți aduce și proteină.",
+  ingr:"Lapte degresat, proteine din lapte, extract de cafea arabica (1,5%), stabilizatori (carrageenan, celuloză), sare, îndulcitor (sucraloză), enzimă lactază.",
+  alg:"Lapte.", store:"La temperatura camerei. Se servește rece.", tags:["Bogat în proteine","Cu cafeină","Fără zahăr adăugat"],
+  note:"Conținut ridicat de cafeină. Nu se recomandă copiilor și femeilor însărcinate sau care alăptează." },
+{ id:"shake-vegan-ciocolata", c:"bauturi", sub:"shake", name:"Shake vegan Ciocolată", size:"330 ml", price:10.99, n:[51,6,3,1.5,1.5,0.3,0.6,0.3], por:"330 ml", pp:20, ml:1,
+  card:"Shake vegetal, 20 g de proteine din mazăre.",
+  desc:"Proteine din mazăre, băutură de ovăz și cacao, într-un shake cremos 100% vegetal. Fără lapte, fără soia. Pentru vegani sau pentru cei care evită lactatele.",
+  ingr:"Apă, proteine din mazăre (6,5%), ovăz (3%), cacao pudră degresată (1,5%), ulei de floarea-soarelui, carbonat de calciu, stabilizator (gumă gellan), sare, aromă, îndulcitor (glicozide de steviol), vitamina D2, vitamina B12.",
+  alg:"Ovăz (gluten).", store:"La temperatura camerei. După deschidere, la frigider, 24 de ore.", tags:["Vegan","Bogat în proteine","Fără lactoză"] },
+{ id:"apa-lamaie-lime", c:"bauturi", sub:"apa", name:"Apă proteică Lămâie & Lime", size:"500 ml", price:7.99, n:[17,4,0.2,0.1,0,0,0,0.05], por:"500 ml", pp:20, ml:1, shape:"clear",
+  card:"Limpede, răcoritoare, 20 g de proteine.",
+  desc:"Arată și se bea ca o limonadă ușoară, dar are 20 g de proteine și doar 85 kcal. Perfectă pentru zilele caniculare sau după cardio, când un shake cremos e prea greu.",
+  ingr:"Apă, izolat proteic hidrolizat din zer (din lapte, 4,4%), acidifiant (acid citric), arome naturale de lămâie și lime, conservant (sorbat de potasiu), îndulcitor (sucraloză).",
+  alg:"Lapte.", store:"La loc răcoros. Se servește rece.", tags:["Bogat în proteine","Fără zahăr adăugat","Fără grăsimi"] },
+{ id:"apa-fructe-padure", c:"bauturi", sub:"apa", name:"Apă proteică Fructe de pădure", size:"500 ml", price:7.99, n:[17,4,0.2,0.1,0,0,0,0.05], por:"500 ml", pp:20, ml:1, shape:"clear",
+  card:"Gust de fructe de pădure, 85 kcal.",
+  desc:"Apă proteică limpede cu gust de zmeură, mure și coacăze. Ușoară, fructată, ușor de băut pe parcursul zilei. 20 g de proteine pe sticlă.",
+  ingr:"Apă, izolat proteic hidrolizat din zer (din lapte, 4,4%), acidifiant (acid citric), arome naturale, colorant (concentrat de morcov negru), conservant (sorbat de potasiu), îndulcitor (sucraloză).",
+  alg:"Lapte.", store:"La loc răcoros. Se servește rece.", tags:["Bogat în proteine","Fără zahăr adăugat","Fără grăsimi"] },
+{ id:"apa-piersica", c:"bauturi", sub:"apa", name:"Apă proteică Piersică", size:"500 ml", price:7.99, n:[17,4,0.3,0.2,0,0,0,0.05], por:"500 ml", pp:20, ml:1, shape:"clear",
+  card:"Ca un ice tea de piersici, cu proteine.",
+  desc:"Gust de piersică dulce, ca un ice tea de vară, fără zahăr adăugat. 20 g de proteine și o senzație ușoară, care nu te îngreunează.",
+  ingr:"Apă, izolat proteic hidrolizat din zer (din lapte, 4,4%), acidifiant (acid citric), arome naturale de piersică, extract de ceai negru, conservant (sorbat de potasiu), îndulcitor (sucraloză).",
+  alg:"Lapte.", store:"La loc răcoros. Se servește rece.", tags:["Bogat în proteine","Fără zahăr adăugat","Fără grăsimi"] },
+{ id:"kefir-proteic", c:"bauturi", sub:"lactat", name:"Kefir proteic", size:"500 ml", price:8.49, n:[45,6,4,4,0.5,0.3,0,0.1], por:"250 ml", pp:15, ml:1, cold:1,
+  card:"Kefir acrișor, cu 15 g de proteine pe pahar.",
+  desc:"Kefir fermentat natural, cu proteină în plus și doar 0,5% grăsime. Gust acrișor, ușor efervescent, perfect la micul dejun sau seara. Merge excelent și în smoothie.",
+  ingr:"Lapte degresat pasteurizat, proteine din lapte, culturi de kefir.", alg:"Lapte.", store:"2-6°C. Produs refrigerat, nu se poate returna.",
+  tags:["Bogat în proteine","Fără zahăr adăugat","Refrigerat"] },
+{ id:"lapte-fara-lactoza", c:"bauturi", sub:"lactat", name:"Lapte proteic fără lactoză", size:"1 l", price:10.99, n:[50,6,3,3,1.5,1,0,0.1], por:"250 ml", pp:15, ml:1, shape:"carton",
+  card:"Dublu proteină față de laptele obișnuit.",
+  desc:"Lapte filtrat cu aproximativ dublu proteină și mai puțin zahăr decât laptele clasic, fără lactoză. Îl folosești la fel: în cafea, în cereale, în shake. Un pahar aduce 15 g de proteine.",
+  ingr:"Lapte parțial degresat filtrat, enzimă lactază.", alg:"Lapte.", store:"La temperatura camerei. După deschidere, la frigider, 4 zile.",
+  tags:["Bogat în proteine","Fără lactoză","Fără zahăr adăugat"] },
+{ id:"iaurt-baut-mango", c:"bauturi", sub:"lactat", name:"Iaurt de băut proteic Mango", size:"350 g", price:7.49, n:[46,5.7,5,4.5,0.3,0.2,0,0.1], por:"350 g", pp:20, cold:1,
+  card:"Mango tropical, 20 g de proteine.",
+  desc:"Iaurt fluid, cu piure de mango și gust tropical. Se bea direct din sticlă, oriunde. Bun ca mic dejun pe fugă sau ca gustare după sală.",
+  ingr:"Lapte degresat pasteurizat, preparat de mango (8%: piure de mango, apă, îngroșător pectină), proteine din lapte, culturi lactice vii, îndulcitor (sucraloză).",
+  alg:"Lapte.", store:"2-6°C. Produs refrigerat, nu se poate returna.", tags:["Bogat în proteine","Fără zahăr adăugat","Refrigerat"] },
+{ id:"shot-tropical", c:"bauturi", sub:"shot", name:"Shot proteic Fructe tropicale", size:"60 ml", price:6.99, n:[169,41.7,0.5,0.3,0,0,0,0.2], por:"60 ml", pp:25, ml:1, shape:"shot",
+  card:"25 g de proteine într-o singură înghițitură.",
+  desc:"Cea mai rapidă porție de proteine: 60 ml, 25 g de proteine, aproape zero zahăr și grăsimi. Îl bei dintr-o dată și ai terminat. Ideal în geanta de sală sau în sertarul de la birou.",
+  ingr:"Apă, colagen hidrolizat și izolat proteic din zer (din lapte), acidifiant (acid citric), arome naturale (ananas, mango, fructul pasiunii), conservant (sorbat de potasiu), îndulcitor (sucraloză).",
+  alg:"Lapte.", store:"La temperatura camerei.", tags:["Bogat în proteine","Fără zahăr adăugat","Fără grăsimi"] },
+{ id:"ciocolata-calda", c:"bauturi", sub:"pudra", name:"Ciocolată caldă proteică (pudră)", size:"300 g", price:39.99, n:[370,50,25,5,6,3.6,8,0.8], por:"30 g", pp:15, shape:"jar",
+  card:"Ciocolată caldă de iarnă, 15 g de proteine pe cană.",
+  desc:"Pudră de cacao cu proteină din lapte, pentru o cană de ciocolată caldă groasă și cremoasă. Amesteci cu lapte fierbinte și ai desertul serii. Cutia are 10 porții.",
+  use:"Dizolvă 30 g în 200 ml lapte fierbinte, amestecând continuu.",
+  ingr:"Proteine din lapte (55%), cacao pudră degresată (25%), fibre de cicoare, îngroșător (gumă guar), aromă de vanilie, sare, îndulcitor (sucraloză).",
+  alg:"Lapte. Poate conține soia, gluten.", tags:["Bogat în proteine","Fără zahăr adăugat","Ediție de iarnă"] },
+{ id:"pachet-12-shake", c:"bauturi", sub:"shake", name:"Pachet 12 shake-uri mix", size:"12 x 330 ml", price:104.99, n:[47,7.6,3.2,2.9,0.4,0.3,0.1,0.15], por:"330 ml", pp:25, ml:1, shape:"box", pack:1,
+  card:"Câte 3 din fiecare aromă. Economisești 15 lei.",
+  desc:"3 shake-uri de Ciocolată, 3 de Vanilie, 3 de Căpșuni și 3 de Banană. Ai proteină pentru aproape două săptămâni de antrenamente și plătești mai puțin decât la bucată.",
+  ingr:"Vezi ingredientele fiecărei arome. Valorile din tabel sunt media celor 4 arome.",
+  alg:"Lapte.", tags:["Pachet","Bogat în proteine","Economisești"] },
+
+/* ---------- PACHET DEGUSTARE (homepage) ---------- */
+{ id:"pachet-degustare", c:"pachete", name:"Pachet de degustare Gramo", size:"10 produse", price:79.99, pp:null, shape:"box", pack:1, mixed:1,
+  card:"10 produse din toate categoriile. Afli ce-ți place.",
+  desc:"Pachetul de degustare are 10 produse din toate categoriile. Afli ce-ți place fără să cumperi cutii întregi. Conține batoane, cookies, snackuri și băuturi care nu necesită refrigerare.",
+  ingr:"Vezi ingredientele fiecărui produs inclus. Lista exactă e tipărită în cutie.",
+  alg:"Lapte, gluten, arahide, nuci, soia, ouă (în funcție de produsele incluse).", tags:["Pachet degustare","Cadou"] }
+];
+
+window.PHOTOS = ["apa-fructe-padure", "apa-lamaie-lime", "apa-piersica", "baton-arahide-crocante", "baton-banana-arahide", "baton-brownie", "baton-cacao-alune", "baton-caramel-sarat", "baton-cheesecake-lamaie", "baton-ciocolata-alba-zmeura", "baton-cocos-ciocolata", "baton-cookie-dough", "baton-cozonac", "baton-espresso", "baton-fistic", "baton-vegan-arahide-merisoare", "baton-vegan-cacao-migdale", "branza-vaci", "budinca-ciocolata", "cascaval-light", "cazeina-ciocolata", "chips-paprika", "chips-sare-mare", "chips-smantana-ceapa", "ciocolata-calda", "colagen-neutru", "cookie-chocolate-chip", "cookie-dubla-ciocolata", "cookie-ovaz-stafide", "cookie-unt-arahide", "cookie-vegan-alune", "cottage-cheese", "covrigei", "crispies-ciocolata", "desert-caramel-sarat", "granola-ciocolata", "iaurt-afine", "iaurt-baut-mango", "iaurt-capsuni", "iaurt-grecesc-2", "iaurt-natural-0", "iaurt-ovaz-mere", "iaurt-soia", "iaurt-vanilie", "iced-latte", "izolat-ciocolata", "izolat-fistic", "izolat-neutru", "jerky-vita", "kefir-proteic", "lapte-fara-lactoza", "mini-cookies-cacao", "mix-clatite", "mix-nuci-edamame", "mozzarella-light", "napolitana-alune", "pachet-12-shake", "pachet-degustare", "pachet-degustare-whey", "pufuleti", "quark", "shake-banana", "shake-capsuni", "shake-ciocolata", "shake-vanilie", "shake-vegan-ciocolata", "shot-tropical", "skyr-natural", "terci-ovaz", "vegana-ciocolata", "vegana-vanilie", "whey-capsuni", "whey-caramel-sarat", "whey-ciocolata", "whey-cookies-cream", "whey-vanilie"];
+</script>
+<script>
+(function(){
+"use strict";
+const P = window.PRODUCTS, CATS = window.CATS;
+const byId = Object.fromEntries(P.map(p => [p.id, p]));
+const catById = Object.fromEntries(CATS.map(c => [c.id, c]));
+const $ = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const app = $("#app");
+const FREE = 199, SHIP = 19.99, CUTOFF = "14:00", COUPON = "GRAMO15";
+const SITE_DESC = "Batoane, cookies, lactate, pudre și băuturi bogate în proteine. Peste 75 de produse, livrare rapidă în toată țara. Gramo, fiecare gram contează.";
+
+/* ---------- utils ---------- */
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = n => n.toFixed(2).replace(".", ",") + " lei";
+const dec = n => String(n).replace(".", ",");
+const has = (p, t) => (p.tags || []).includes(t);
+const isCold = p => p.c === "lactate" || !!p.cold;
+const isSupp = p => p.c === "pudre" && !p.food;
+const hash = s => { let h = 0; for (const ch of s) h = (h * 31 + ch.charCodeAt(0)) >>> 0; return h; };
+const store = {
+  get(k, d){ try { const v = localStorage.getItem("gramo:" + k); return v == null ? d : JSON.parse(v); } catch(e){ return d; } },
+  set(k, v){ try { localStorage.setItem("gramo:" + k, JSON.stringify(v)); } catch(e){} }
+};
+const validEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
+
+/* ---------- logo ---------- */
+const DIAL = `<svg class="dial" viewBox="0 0 40 40" aria-hidden="true"><circle class="face" cx="20" cy="20" r="15"/><circle class="rim" cx="20" cy="20" r="15" stroke-width="6.5"/><path class="needle" d="M20 20 L28.5 11.5" stroke-width="5" stroke-linecap="round"/><circle class="hub" cx="20" cy="20" r="3.8"/></svg>`;
+const logoHTML = () => `gram${DIAL}`;
+$("#logo").innerHTML = logoHTML();
+
+/* ---------- flavour colours ---------- */
+const FLAV = [
+  ["fistic","#7FB24A"],["zmeur","#D9356A"],["căpșuni","#E5486A"],["afine","#4F4CC9"],["fructe de pădure","#8E2F6B"],
+  ["mango","#F2A93B"],["piersic","#F59C6B"],["lămâie","#E9CF3A"],["banan","#EDC93C"],["tropical","#F28C38"],
+  ["espresso","#4A2E22"],["latte","#8A5A3C"],["caramel","#C67C2E"],["cocos","#3F8C88"],["arahide","#C9853F"],
+  ["cozonac","#A3341F"],["cheesecake","#E8C547"],["cookie dough","#B98552"],["brownie","#4B2A20"],
+  ["cacao","#6B3A26"],["ciocolat","#5C3324"],["vanilie","#E3B95B"],["paprika","#C9442B"],["smântână","#4D8F5B"],
+  ["sare de mare","#3A6FB0"],["pufule","#E2A93A"],["covrig","#9C5B2C"],["jerky","#7A2E22"],["edamame","#5E9640"],
+  ["ovăz","#B48A55"],["skyr","#6C9BD2"],["grecesc","#3D6FB6"],["soia","#7C9B4D"],["brânză","#5D86C5"],
+  ["cottage","#5A9CC4"],["quark","#4F7FD0"],["mozzarella","#3FA06F"],["cașcaval","#E0A526"],["kefir","#6A8FD8"],
+  ["lapte","#3E64D6"],["colagen","#9A8FB8"],["neutru","#7A86A8"],["clătite","#D88A3D"],["degustare","#2B37E8"],["natural","#3E64D6"]
+];
+function flav(p){
+  const n = p.name.toLowerCase();
+  for (const [k, c] of FLAV) if (n.includes(k)) return c;
+  return "#2B37E8";
+}
+const tint = c => `background:color-mix(in srgb, ${c} 20%, var(--card))`;
+
+/* ---------- packaging illustrations ---------- */
+const INK = "#11153D", BUT = "#FFD84A";
+function label(x, y, w, h, p, big){
+  const g = p.pp != null ? p.pp + "g" : "10×";
+  const fs = big || Math.min(h * .52, w * .36);
+  // wordmark: "gram" + scale dial, same construction as the site logo
+  const wf = h * .2, gw = wf * 2.05, dr = wf * .3, tw = gw + wf * .05 + dr * 2;
+  const wx = x + (w - tw) / 2, wy = y + h * .27, dcx = wx + gw + wf * .05 + dr, dcy = wy - dr * .95;
+  const wm = `<text x="${wx}" y="${wy}" textLength="${gw}" lengthAdjust="spacingAndGlyphs" font-family="Bricolage Grotesque, Arial Black, sans-serif" font-weight="800" font-size="${wf}" fill="${INK}">gram</text>
+  <circle cx="${dcx}" cy="${dcy}" r="${dr * .82}" fill="${BUT}" stroke="${INK}" stroke-width="${dr * .36}"/>
+  <path d="M${dcx} ${dcy} l${dr * .5} ${-dr * .5}" stroke="#2B37E8" stroke-width="${dr * .3}" stroke-linecap="round"/><circle cx="${dcx}" cy="${dcy}" r="${dr * .2}" fill="#2B37E8"/>`;
+  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="6" fill="#fff"/>
+  ${wm}
+  <text x="${x + w/2}" y="${y + h*.27 + fs*.95}" text-anchor="middle" font-family="Bricolage Grotesque, Arial Black, sans-serif" font-weight="800" font-size="${fs}" fill="${INK}" letter-spacing="-2">${g}</text>
+  <rect x="${x}" y="${y + h - h*.14}" width="${w}" height="${h*.14}" fill="${BUT}"/>`;
+}
+function pack(p){
+  const c = flav(p);
+  const shape = p.shape || (catById[p.c] ? catById[p.c].shape : "box");
+  const v = `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${esc(p.name)}">`;
+  let s = "";
+  switch (shape) {
+    case "bar":
+      s = `<g transform="rotate(-14 100 100)">
+        <path d="M14 66 l6 6 -6 6 6 6 -6 6 6 6 -6 6 6 6 -6 6 6 6 -6 6 H186 l-6 -6 6 -6 -6 -6 6 -6 -6 -6 6 -6 -6 -6 6 -6 -6 -6 6 -6Z" fill="${c}"/>
+        <rect x="14" y="66" width="172" height="10" fill="#000" opacity=".12"/>
+        ${label(60, 74, 80, 52, p)}</g>`; break;
+    case "cup":
+      s = `<path d="M48 62 H152 L139 172 Q100 182 61 172 Z" fill="${c}"/>
+        <ellipse cx="100" cy="62" rx="56" ry="11" fill="#E4E7F4"/><ellipse cx="100" cy="60" rx="50" ry="7" fill="#C9CEE6"/>
+        ${label(62, 92, 76, 58, p)}`; break;
+    case "tub":
+      s = `<path d="M34 78 H166 L156 170 Q100 180 44 170 Z" fill="${c}"/>
+        <rect x="28" y="62" width="144" height="20" rx="8" fill="#E4E7F4"/>
+        ${label(66, 96, 68, 58, p)}`; break;
+    case "bag":
+      s = `<path d="M46 36 H154 L160 48 Q152 100 160 156 L154 168 H46 L40 156 Q48 100 40 48 Z" fill="${c}"/>
+        <path d="M46 36 H154 L160 48 H40Z M40 156 H160 L154 168 H46Z" fill="#000" opacity=".15"/>
+        ${label(62, 70, 76, 70, p)}`; break;
+    case "pouch":
+      s = `<path d="M44 26 H156 V36 Q164 100 168 178 Q100 188 32 178 Q36 100 44 36Z" fill="${c}"/>
+        <rect x="44" y="26" width="112" height="12" fill="#000" opacity=".18"/><line x1="48" y1="50" x2="152" y2="50" stroke="#fff" stroke-opacity=".45" stroke-width="2" stroke-dasharray="4 3"/>
+        ${label(58, 74, 84, 80, p)}`; break;
+    case "box":
+      s = `<path d="M40 54 L60 34 H170 L150 54Z" fill="${c}" opacity=".7"/><path d="M150 54 L170 34 V160 L150 180Z" fill="${c}" opacity=".55"/>
+        <rect x="40" y="54" width="110" height="126" fill="${c}"/>
+        ${label(52, 82, 86, 70, p)}`; break;
+    case "jar":
+      s = `<rect x="50" y="58" width="100" height="122" rx="16" fill="${c}"/><rect x="46" y="38" width="108" height="26" rx="8" fill="${INK}"/>
+        ${label(62, 86, 76, 66, p)}`; break;
+    case "cookie": {
+      const chips = [[70,72],[118,64],[136,108],[86,128],[60,108],[112,140],[100,96]];
+      s = `<circle cx="100" cy="100" r="74" fill="#C9935A"/><circle cx="100" cy="100" r="74" fill="${c}" opacity=".45"/>
+        <circle cx="100" cy="100" r="66" fill="none" stroke="#000" stroke-opacity=".08" stroke-width="6"/>
+        ${chips.map(([x,y]) => `<rect x="${x}" y="${y}" width="12" height="10" rx="3" fill="#3A2016"/>`).join("")}
+        <circle cx="132" cy="146" r="30" fill="#fff"/><text x="132" y="153" text-anchor="middle" font-family="Bricolage Grotesque, Arial Black, sans-serif" font-weight="800" font-size="22" fill="${INK}" letter-spacing="-1">${p.pp}g</text>`; break; }
+    case "can":
+      s = `<rect x="62" y="34" width="76" height="144" rx="12" fill="${c}"/><ellipse cx="100" cy="36" rx="38" ry="7" fill="#C9CEE6"/>
+        ${label(66, 82, 68, 62, p)}`; break;
+    case "carton":
+      s = `<path d="M56 64 L76 30 H124 L144 64Z" fill="#fff"/><rect x="84" y="20" width="32" height="12" fill="${c}"/>
+        <rect x="56" y="64" width="88" height="116" fill="${c}"/>${label(64, 88, 72, 64, p)}`; break;
+    case "shot":
+      s = `<rect x="84" y="54" width="32" height="16" rx="3" fill="${INK}"/><path d="M76 74 Q76 68 84 68 H116 Q124 68 124 74 V170 Q124 178 116 178 H84 Q76 178 76 170Z" fill="${c}"/>
+        ${label(80, 98, 40, 56, p, 17)}`; break;
+    case "clear":
+    case "bottle":
+    default: {
+      const clear = shape === "clear";
+      s = `<rect x="82" y="16" width="36" height="20" rx="4" fill="${clear ? c : INK}"/>
+        <path d="M70 52 Q70 40 86 40 H114 Q130 40 130 52 L140 72 V172 Q140 184 128 184 H72 Q60 184 60 172 V72 Z" fill="${c}" ${clear ? 'fill-opacity=".38" stroke="'+c+'" stroke-width="3"' : ""}/>
+        ${label(66, 90, 68, 64, p)}`;
+    }
+  }
+  return v + s + "</svg>";
+}
+
+
+/* ---------- product photos (img/<id>.jpg when generated, otherwise the illustration) ---------- */
+const PHOTOS = new Set(window.PHOTOS || []);
+const PHOTO_SRC = window.PHOTO_SRC || {};
+const art = p => PHOTOS.has(p.id) ? `<img class="photo" src="${PHOTO_SRC[p.id] || `img/${p.id}.jpg`}" alt="${esc(p.name)}" loading="lazy" width="800" height="800">` : pack(p);
+
+/* ---------- state ---------- */
+let cart = store.get("cart", []);
+let coupon = store.get("coupon", "");
+const saveCart = () => { store.set("cart", cart); store.set("coupon", coupon); renderCount(); };
+const unit = l => byId[l.id].price * (l.s ? .9 : 1);
+function totals(){
+  const sub = cart.reduce((a, l) => a + unit(l) * l.q, 0);
+  const disc = coupon === COUPON ? sub * .15 : 0;
+  const after = sub - disc;
+  const ship = cart.length === 0 || after >= FREE ? 0 : SHIP;
+  return { sub, disc, after, ship, total: after + ship, cold: cart.some(l => isCold(byId[l.id])) };
+}
+function addToCart(id, q = 1, s = 0, silent){
+  const p = byId[id]; if (!p || p.stock === 0) return;
+  const ex = cart.find(l => l.id === id && l.s === s);
+  if (ex) ex.q += q; else cart.push({ id, q, s });
+  saveCart(); renderDrawer();
+  if (!silent) toast(`<b>✓</b> ${esc(p.name)} a fost adăugat în coș`);
+}
+function renderCount(){ $("#cartCount").textContent = cart.reduce((a, l) => a + l.q, 0); }
+
+let toastT;
+function toast(html){
+  const t = $("#toast"); t.innerHTML = html; t.classList.add("show");
+  clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("show"), 2600);
+}
+
+/* ---------- announcement ---------- */
+const ANN = [
+  `Livrare gratuită la comenzi peste <b>199 lei</b>`,
+  `-15% la prima comandă cu codul <b>${COUPON}</b>`,
+  `Livrăm în <b>24-48h</b> în toată țara`
+];
+let annI = 0;
+function rotateAnn(){ $("#announce").innerHTML = `<span>${ANN[annI % ANN.length]}</span>`; annI++; }
+rotateAnn(); setInterval(rotateAnn, 5000);
+
+/* ---------- nav + footer ---------- */
+const NAV = [["c-batoane","Batoane"],["c-lactate","Lactate"],["c-snackuri","Cookies & snackuri"],["c-pudre","Pudre"],["c-bauturi","Băuturi"],["pachete","Pachete"],["despre","Despre noi"]];
+$("#nav").innerHTML = NAV.map(([h, t]) => `<a href="#${h}" data-r="${h}">${t}</a>`).join("");
+$("#menuBtn").onclick = () => { const n = $("#nav"); const o = n.classList.toggle("open"); $("#menuBtn").setAttribute("aria-expanded", o); };
+
+$("#footer").innerHTML = `
+<div class="fgrid">
+  <div class="about"><a href="#acasa" class="logo">${logoHTML()}</a>
+    <p>Gramo face gustări proteice pentru viața reală. Gust întâi, cifre clare, fără compromisuri.</p></div>
+  <div><h4>Magazin</h4><ul>
+    <li><a href="#c-batoane">Batoane</a></li><li><a href="#c-lactate">Lactate</a></li><li><a href="#c-snackuri">Cookies & snackuri</a></li>
+    <li><a href="#c-pudre">Pudre</a></li><li><a href="#c-bauturi">Băuturi</a></li><li><a href="#pachete">Pachete</a></li></ul></div>
+  <div><h4>Ajutor</h4><ul>
+    <li><a href="#livrare">Livrare</a></li><li><a href="#livrare">Retur</a></li><li><a href="#intrebari">Întrebări frecvente</a></li>
+    <li><a href="#contact">Contact</a></li></ul></div>
+</div>
+<div class="legalbar"><span>© 2026 Gramo. Toate drepturile rezervate.</span></div>`;
+
+/* ---------- product card ---------- */
+function card(p){
+  const c = flav(p);
+  const flags = [];
+  if (has(p, "Bestseller")) flags.push(`<span class="flag best">Bestseller</span>`);
+  if (has(p, "Ediție limitată")) flags.push(`<span class="flag best">Ediție limitată</span>`);
+  if (has(p, "Vegan")) flags.push(`<span class="flag">Vegan</span>`);
+  if (isCold(p)) flags.push(`<span class="flag cold">❄ La rece</span>`);
+  if (p.stock === 0) flags.push(`<span class="flag out">Epuizat</span>`);
+  return `<article class="pcard">
+    <a class="img" href="#p-${p.id}" style="${tint(c)}" aria-label="${esc(p.name)}">${art(p)}
+      ${p.pp ? `<span class="gbadge"><b>${p.pp} g</b>proteine / porție</span>` : `<span class="gbadge"><b>10</b>produse</span>`}
+      <span class="flags">${flags.slice(0,2).join("")}</span></a>
+    <div class="body">
+      <h3><a href="#p-${p.id}">${esc(p.name)}</a></h3>
+      <p class="blurb">${esc(p.card)}</p>
+      <div class="meta"><span class="price">${fmt(p.price)} <small>· ${esc(p.size)}</small></span>
+        <button class="add" data-add="${p.id}" ${p.stock === 0 ? "disabled style='opacity:.35'" : ""} aria-label="Adaugă în coș: ${esc(p.name)}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div>
+    </div></article>`;
+}
+
+/* ---------- icons ---------- */
+const IC = {
+  scale:`<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="12" width="30" height="22" rx="5"/><path d="M12 12a8 8 0 0 1 16 0"/><path d="M20 12l4-5"/><path d="M11 25h18"/></svg>`,
+  taste:`<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="20" r="14"/><path d="M13 22c2 4 12 4 14 0"/><path d="M14 15h2M24 15h2"/></svg>`,
+  truck:`<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h20v17H3z"/><path d="M23 16h8l6 6v5H23"/><circle cx="10" cy="30" r="3.5"/><circle cx="30" cy="30" r="3.5"/><path d="M9 15l2 2 4-4"/></svg>`,
+  ret:`<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 16h20a7 7 0 0 1 0 14H14"/><path d="M14 10l-6 6 6 6"/></svg>`,
+  info:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>`,
+  snow:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M4 7l16 10M20 7L4 17"/></svg>`,
+  check:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg>`
+};
+
+/* ---------- SEO ---------- */
+function seo(title, desc){
+  document.title = title;
+  let m = $('meta[name="description"]');
+  if (!m) { m = document.createElement("meta"); m.name = "description"; document.head.appendChild(m); }
+  m.content = desc || SITE_DESC;
+}
+
+/* ---------- HOME ---------- */
+const HERO = {
+  a:{ h:`Proteină care chiar <em>are gust.</em>`, s:"Batoane, cookies, iaurturi și shake-uri cu 15-30 g de proteine pe porție. Fără gust de carton.", b:"Descoperă gustările" },
+  b:{ h:`Sătul până la <em>masa următoare.</em>`, s:"Gustări bogate în proteine pentru zilele în care nu ai timp să gătești.", b:"Alege-ți gustarea" },
+  c:{ h:`<em>20 g</em> de proteine. Zero compromisuri la gust.`, s:"Peste 75 de produse proteice, testate de noi înainte să ajungă la tine.", b:"Vezi produsele" }
+};
+function heroVariant(force){
+  if (force) { store.set("hero", force); return force; }
+  let v = store.get("hero", null);
+  if (!v || !HERO[v]) { v = "abc"[Math.floor(Math.random() * 3)]; store.set("hero", v); }
+  return v;
+}
+const BEST = ["baton-cacao-alune","cookie-chocolate-chip","whey-ciocolata","shake-ciocolata","baton-arahide-crocante","skyr-natural","chips-smantana-ceapa","apa-lamaie-lime"];
+
+function viewHome(force, scrollTo){
+  seo("Gramo | Gustări proteice care chiar au gust", SITE_DESC);
+  const v = heroVariant(force), H = HERO[v];
+  const tasteIds = ["baton-cacao-alune","cookie-chocolate-chip","chips-paprika","shake-vanilie","baton-vegan-cacao-migdale","pufuleti","apa-piersica","napolitana-alune","mini-cookies-cacao","baton-caramel-sarat"];
+  app.innerHTML = `
+  <section class="hero wrap" data-variant="${v}">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Gustări proteice · Fiecare gram contează</p>
+        <h1 style="margin-top:16px">${H.h}</h1>
+        <p class="sub">${H.s}</p>
+        <div class="ctas"><a class="btn btn-primary" href="#c-batoane">${H.b} →</a><a class="btn btn-ghost" href="#p-pachet-degustare">Fă testul de gust</a></div>
+      </div>
+      <div class="scale" aria-label="Cântar care arată 20 g de proteine">
+        <div class="readout"><small>proteine / porție</small><span class="v num" id="readout">0.0 g</span></div>
+        <div>
+          <div class="packs">${pack(byId["iaurt-capsuni"])}${pack(byId["shake-ciocolata"])}${pack(byId["baton-cacao-alune"])}</div>
+          <div class="plate"></div>
+        </div>
+        <div class="tag"><span>TARA 0.0 g</span><span>75+ produse cântărite</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap"><div class="benefits">
+    <div class="benefit">${IC.scale}<div><h3>Proteine scrise mare</h3><p>Vezi gramele pe fiecare produs, din prima.</p></div></div>
+    <div class="benefit">${IC.taste}<div><h3>Gust testat</h3><p>Ce nu ne place nouă, nu vindem.</p></div></div>
+    <div class="benefit">${IC.truck}<div><h3>Livrare în 24-48h</h3><p>Lactatele vin la rece.</p></div></div>
+    <div class="benefit">${IC.ret}<div><h3>Fără bătăi de cap</h3><p>Retur simplu la produsele nedesfăcute.</p></div></div>
+  </div></section>
+
+  <section class="section wrap">
+    <div class="sec-head"><h2>Ce poftă ai azi?</h2></div>
+    <div class="cats">${CATS.map(c => { const first = P.find(p => p.c === c.id); const n = P.filter(p => p.c === c.id).length;
+      return `<a class="cat" href="#c-${c.id}"><span class="count num">${n} produse</span><div class="art" style="${tint(flav(first))}">${art(first)}</div><h3>${c.name}</h3><p>${c.tile}</p></a>`; }).join("")}</div>
+  </section>
+
+  <section class="section wrap" id="bestsellers" style="padding-top:0">
+    <div class="sec-head"><div><h2>Preferatele comunității</h2><p>Produsele pe care clienții le comandă iar și iar.</p></div><a class="btn btn-ghost btn-sm" href="#c-batoane">Toate produsele →</a></div>
+    <div class="grid">${BEST.map(id => card(byId[id])).join("")}</div>
+  </section>
+
+  <section class="wrap"><div class="tasting">
+    <div class="txt"><p class="eyebrow" style="color:inherit;opacity:.7">Pachet de degustare · 10 produse</p><h2>Nu știi de unde să începi?</h2>
+      <p>Pachetul de degustare are 10 produse din toate categoriile. Afli ce-ți place fără să cumperi cutii întregi.</p>
+      <div><a class="btn btn-butter" href="#p-pachet-degustare">Vreau pachetul de degustare</a></div></div>
+    <div class="art"><div class="boxgrid">${tasteIds.map(id => pack(byId[id])).join("")}</div></div>
+  </div></section>
+
+  <section class="section wrap"><div class="learn">
+    <div class="copy"><p class="eyebrow">Cum alegi</p><h2>Câtă proteină îți trebuie, de fapt?</h2>
+      <p>Pentru un adult, recomandarea generală este de aproximativ 0,8 g de proteine pe kilogram corp pe zi. Dacă faci sport des, nevoia poate fi mai mare. O gustare Gramo îți aduce între 10 și 30 g, adică o parte bună din necesarul zilei.</p></div>
+    ${calcHTML()}
+  </div></section>
+
+  <section class="wrap" style="padding-bottom:72px"><div class="sec-head"><h2>Ce spun cei care au gustat</h2></div>
+    <div class="launch"><div class="stars" aria-hidden="true">★★★★★</div>
+      <div><h3>Suntem noi.</h3><p>Fii printre primii care ne lasă o recenzie și primești 20 de lei la următoarea comandă.</p></div>
+      <a class="btn btn-ghost" href="#c-batoane">Alege primul produs</a></div>
+  </section>
+
+  <section class="wrap">${newsHTML()}</section>`;
+  bindCalc(); bindNews();
+  animateReadout();
+  if (scrollTo) setTimeout(() => $("#" + scrollTo)?.scrollIntoView({ behavior: "smooth" }), 30);
+}
+function animateReadout(){
+  const el = $("#readout"); if (!el) return;
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) { el.textContent = "20.0 g"; return; }
+  const t0 = performance.now(), D = 1400;
+  (function f(t){ const k = Math.min(1, (t - t0) / D), e = 1 - Math.pow(1 - k, 3);
+    el.textContent = (20 * e).toFixed(1) + " g"; if (k < 1) requestAnimationFrame(f); })(t0);
+}
+
+function calcHTML(){
+  return `<div class="calc" id="calc">
+    <label for="kg">Greutatea ta</label>
+    <div class="row"><input type="range" id="kg" min="40" max="140" value="70" step="1" aria-describedby="calcOut"><span class="kg num" id="kgv">70 kg</span></div>
+    <div class="out" id="calcOut"><span class="big num" id="need">56</span><span>g de proteine pe zi, recomandarea generală pentru adulți (0,8 g/kg)</span></div>
+    <div class="bars" id="bars" aria-hidden="true"></div>
+    <p class="fine" id="calcNote"></p>
+    <p class="fine">Estimare orientativă. Dacă faci sport intens sau ai nevoi speciale, discută cu un medic sau un nutriționist.</p>
+  </div>`;
+}
+function bindCalc(){
+  const r = $("#kg"); if (!r) return;
+  const up = () => { const kg = +r.value, need = Math.round(kg * .8);
+    $("#kgv").textContent = kg + " kg"; $("#need").textContent = need;
+    const snacks = Math.max(1, Math.round(need / 20));
+    $("#bars").innerHTML = Array.from({ length: Math.ceil(need / 10) }, (_, i) => `<i class="${i < 2 ? "on" : ""}"></i>`).join("");
+    $("#calcNote").textContent = `Un baton de 20 g acoperă cam ${Math.round(20 / need * 100)}% din necesar. Restul vine din mesele zilei.`; };
+  r.addEventListener("input", up); up();
+}
+
+function newsHTML(){
+  return `<div class="news" id="news">
+    <div><h2>-15% la prima comandă</h2><p>Abonează-te și primești codul pe email, plus rețete proteice și oferte înaintea tuturor.</p></div>
+    <div id="newsBox"><form id="newsForm" novalidate>
+      <label for="nEmail" class="sr">Adresa ta de email</label>
+      <div class="field"><input id="nEmail" type="email" placeholder="Adresa ta de email" autocomplete="email"><button class="btn btn-butter" type="submit">Vreau reducerea</button></div>
+      <p class="err" id="nErr" hidden></p>
+      <p class="fine">Te poți dezabona oricând.</p>
+    </form></div></div>`;
+}
+function bindNews(){
+  const f = $("#newsForm"); if (!f) return;
+  f.addEventListener("submit", e => { e.preventDefault();
+    const v = $("#nEmail").value, err = $("#nErr");
+    if (!v.trim()) { err.textContent = "Câmpul acesta e obligatoriu."; err.hidden = false; return; }
+    if (!validEmail(v)) { err.textContent = "Verifică adresa de email, pare că lipsește ceva."; err.hidden = false; return; }
+    $("#newsBox").innerHTML = `<div class="ok">Bine ai venit în Gramo! Codul tău e <code>${COUPON}</code>, valabil 7 zile.<br><small style="font-weight:500">Magazin demo: nu s-a trimis niciun email. Folosește codul în coș.</small></div>`;
+  });
+}
+
+/* ---------- CATEGORY ---------- */
+const FILT = {
+  "Vegan": p => has(p, "Vegan"), "Fără zahăr adăugat": p => has(p, "Fără zahăr adăugat"),
+  "Crocant": p => has(p, "Crocant"), "Moale": p => !has(p, "Crocant"), "Ediție limitată": p => has(p, "Ediție limitată"),
+  "Iaurturi": p => p.sub === "iaurt", "Brânzeturi": p => p.sub === "branza", "Deserturi": p => p.sub === "desert",
+  "Dulci": p => p.sub === "dulce", "Sărate": p => has(p, "Sărat"),
+  "Whey concentrat": p => p.sub === "whey", "Izolat": p => p.sub === "izolat", "Cazeină": p => p.sub === "cazeina", "Mix-uri pentru gătit": p => p.sub === "mix",
+  "Shake-uri": p => p.sub === "shake", "Apă proteică": p => p.sub === "apa", "Lactate de băut": p => p.sub === "lactat", "Cu cafeină": p => has(p, "Cu cafeină")
+};
+function viewCat(id){
+  const c = catById[id]; if (!c) return view404();
+  seo(c.mt, c.md);
+  const items = P.filter(p => p.c === id);
+  const maxP = Math.max(...items.map(p => p.pp || 0));
+  const active = new Set(); let sort = "rec";
+  app.innerHTML = `<div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="#acasa">Acasă</a><span>/</span><span>${c.name}</span></nav>
+    <div class="cat-hero"><div><h1>${c.name}</h1><p>${c.intro}</p></div>
+      <div class="stat"><span class="eyebrow">până la</span><b class="num">${maxP} g</b><span class="fine">proteine / porție</span></div></div>
+    ${c.note ? `<div class="notice" style="margin-top:18px">${IC.snow}<span>${c.note}</span></div>` : ""}
+    ${id === "pudre" ? `<div class="notice warn" style="margin-top:18px">${IC.info}<span>Supliment alimentar. Nu depășiți doza zilnică recomandată. Suplimentele alimentare nu înlocuiesc o dietă variată și echilibrată și un stil de viață sănătos. A nu se lăsa la îndemâna copiilor.</span></div>` : ""}
+    <div class="toolbar" role="group" aria-label="Filtre">
+      ${c.filters.map(f => `<button class="chip" aria-pressed="false" data-f="${esc(f)}">${f}</button>`).join("")}
+      <span class="spacer"></span>
+      <label class="sr" for="sort">Sortează</label>
+      <select id="sort"><option value="rec">Recomandate</option><option value="pa">Preț crescător</option><option value="pd">Preț descrescător</option><option value="pr">Cele mai multe proteine</option></select>
+    </div>
+    <p class="fine" id="resCount" style="margin-bottom:12px"></p>
+    <div class="grid" id="catGrid"></div></div>`;
+  const draw = () => {
+    let list = items.filter(p => [...active].every(f => FILT[f](p)));
+    if (sort === "pa") list.sort((a, b) => a.price - b.price);
+    if (sort === "pd") list.sort((a, b) => b.price - a.price);
+    if (sort === "pr") list.sort((a, b) => (b.pp || 0) - (a.pp || 0));
+    $("#resCount").textContent = `${list.length} ${list.length === 1 ? "produs" : "produse"}`;
+    $("#catGrid").innerHTML = list.length ? list.map(card).join("") : `<div class="empty" style="grid-column:1/-1">Niciun produs nu se potrivește cu toate filtrele. Scoate un filtru și încearcă din nou.</div>`;
+  };
+  $$(".chip").forEach(b => b.onclick = () => { const f = b.dataset.f; active.has(f) ? active.delete(f) : active.add(f); b.setAttribute("aria-pressed", active.has(f)); draw(); });
+  $("#sort").onchange = e => { sort = e.target.value; draw(); };
+  draw();
+}
+function viewPacks(){
+  seo("Pachete | Gramo", "Pachete de degustare și pachete economice Gramo.");
+  const items = P.filter(p => p.pack);
+  app.innerHTML = `<div class="wrap"><nav class="crumbs"><a href="#acasa">Acasă</a><span>/</span><span>Pachete</span></nav>
+    <div class="cat-hero"><div><h1>Pachete</h1><p>Mai multe arome într-o singură cutie. Bune ca să descoperi ce-ți place sau ca să economisești.</p></div></div>
+    <div class="grid" style="margin-top:24px">${items.map(card).join("")}</div></div>`;
+}
+
+/* ---------- PRODUCT ---------- */
+const ALG = ["lapte","zer","cazeină","soia","arahide","arahidă","alune de pădure","alune","migdale","caju","fistic","nuci","miez de nucă","grâu","ovăz","gluten","ouă","ou","susan","muștar","țelină","smântână"];
+function boldAllergens(t){
+  const re = new RegExp(`(^|[\\s(,;:])(${ALG.sort((a,b) => b.length - a.length).join("|")})(?=[\\s),.;:%]|$)`, "gi");
+  return esc(t).replace(re, (m, pre, w) => `${pre}<b>${w}</b>`);
+}
+function portionQty(p){ return parseFloat(String(p.por || p.size).replace(",", ".")) || 0; }
+function nutritionTable(p){
+  if (!p.n) return `<p>Valorile nutriționale sunt afișate pe pagina fiecărui produs inclus în pachet.</p>`;
+  const u = p.ml ? "100 ml" : "100 g", q = portionQty(p), pu = p.por || p.size;
+  const [k, pr, cb, su, fa, sa, fi, salt] = p.n, per = x => q ? dec(Math.round(x * q / 10) / 10) : "-";
+  const kj = Math.round(k * 4.184);
+  const rows = [
+    ["Valoare energetică", `${kj} kJ / ${k} kcal`, q ? `${Math.round(kj*q/100)} kJ / ${Math.round(k*q/100)} kcal` : "-"],
+    ["Grăsimi", dec(fa) + " g", per(fa) + " g"], ["din care acizi grași saturați", dec(sa) + " g", per(sa) + " g", 1],
+    ["Glucide", dec(cb) + " g", per(cb) + " g"], ["din care zaharuri", dec(su) + " g", per(su) + " g", 1],
+    ["Fibre", dec(fi) + " g", per(fi) + " g"], ["Proteine", dec(pr) + " g", (p.pp ?? per(pr)) + " g", 0, 1], ["Sare", dec(salt) + " g", per(salt) + " g"]
+  ];
+  return `<div class="nlabel"><table><caption>Declarație nutrițională</caption>
+    <thead><tr><th scope="col"></th><th scope="col">per ${u}</th><th scope="col">per porție (${esc(pu)})</th></tr></thead>
+    <tbody>${rows.map(r => `<tr class="${r[3] ? "indent" : ""}${r[4] ? " prot" : ""}"><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("")}</tbody></table></div>
+    <p class="fine">Valorile nutriționale sunt orientative. Pentru informații exacte, consultați eticheta produsului.</p>`;
+}
+function crossSell(p){
+  const pool = P.filter(x => x.c !== p.c && x.c !== "pachete" && x.stock !== 0);
+  const out = [], h = hash(p.id);
+  for (let i = 0; out.length < 4 && i < 40; i++) { const x = pool[(h + i * 13) % pool.length]; if (!out.includes(x)) out.push(x); }
+  return out;
+}
+function viewProduct(id){
+  const p = byId[id]; if (!p) return view404();
+  const c = catById[p.c];
+  seo(`${p.name} | Gramo`, `${p.card} ${p.size}, ${fmt(p.price)}. Livrare în 24-48h.`);
+  const col = flav(p), q = portionQty(p);
+  const claim = p.n && (p.n[1] * 4 / p.n[0]) >= .12;
+  const showTags = (p.tags || []).filter(t => t !== "Bestseller");
+  const crumbs = c ? `<a href="#c-${c.id}">${c.name}</a>` : `<a href="#pachete">Pachete</a>`;
+  let subOn = 0, freq = 2, qty = 1;
+  app.innerHTML = `<div class="wrap">
+    <nav class="crumbs"><a href="#acasa">Acasă</a><span>/</span>${crumbs}<span>/</span><span>${esc(p.name)}</span></nav>
+    <div class="pdp">
+      <div class="gallery" style="${tint(col)}">${art(p)}
+        ${p.pp ? `<span class="gbadge"><b>${p.pp} g</b>proteine / porție</span>` : ""}</div>
+      <div class="info">
+        <div class="tagrow">${has(p, "Bestseller") ? `<span class="flag best">Bestseller</span>` : ""}${isCold(p) ? `<span class="flag cold">❄ Livrare la rece</span>` : ""}${showTags.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div>
+        <h1>${esc(p.name)}</h1>
+        <p class="lead">${esc(p.card)}</p>
+        ${p.n ? `<div class="macro">
+          <div class="hl"><b>${p.pp} g</b><span>proteine / porție</span></div>
+          <div><b>${q ? Math.round(p.n[0] * q / 100) : "-"}</b><span>kcal / porție</span></div>
+          <div><b>${dec(p.n[3])} g</b><span>zaharuri / ${p.ml ? "100 ml" : "100 g"}</span></div>
+          <div><b>${dec(p.n[6])} g</b><span>fibre / ${p.ml ? "100 ml" : "100 g"}</span></div></div>` : ""}
+        <div class="buybox">
+          <div class="pr num" id="pdpPrice">${fmt(p.price)}</div>
+          <p class="fine">${esc(p.size)}${p.por && p.por !== p.size ? ` · porție ${esc(p.por)}` : ""}</p>
+          ${p.stock === 0 ? `
+            <div class="notice warn">${IC.info}<span><b>Momentan epuizat.</b> Anunță-mă când revine</span></div>
+            <form class="notify" id="notifyForm" novalidate><label class="sr" for="notifyEmail">Email</label><input class="input" id="notifyEmail" type="email" placeholder="Adresa ta de email"><button class="btn btn-primary" type="submit">Anunță-mă</button></form>
+            <p class="err fine" id="notifyMsg" hidden></p>` : `
+            ${p.stock ? `<p class="stock-low">Au mai rămas doar ${p.stock} bucăți</p>` : ""}
+            ${p.mixed ? "" : `<div class="opt" role="radiogroup" aria-label="Tip cumpărare">
+              <label><input type="radio" name="buy" value="0" checked><span><b>Cumpărare unică</b><small>${fmt(p.price)}</small></span></label>
+              <label><input type="radio" name="buy" value="1"><span><b>Abonează-te și economisești 10%</b><small>Livrare la 2 sau 4 săptămâni, anulezi oricând.</small>
+                <span class="freq"><button type="button" class="chip" data-fq="2" aria-pressed="true">La 2 săptămâni</button><button type="button" class="chip" data-fq="4" aria-pressed="false">La 4 săptămâni</button></span></span></label></div>`}
+            <div class="qtyrow"><div class="qty"><button type="button" id="qm" aria-label="Scade cantitatea">−</button><span id="qv">1</span><button type="button" id="qp" aria-label="Crește cantitatea">+</button></div>
+              <button class="btn btn-primary" id="addBtn">Adaugă în coș</button></div>
+            <button class="btn btn-ghost btn-block" id="buyNow">Cumpără acum</button>
+            <p class="ship-line">${IC.check}Comanzi până la ${CUTOFF} și pleacă azi</p>`}
+          ${isCold(p) ? `<div class="notice">${IC.snow}<span>Produs refrigerat. Îl livrăm în cutie izotermă cu elemente de răcire. Se păstrează la 2-6°C și nu se poate returna.</span></div>` : ""}
+          ${p.note ? `<div class="legal-note">${esc(p.note)}</div>` : ""}
+        </div>
+        <div class="tabs">
+          <div class="tablist" role="tablist">
+            <button role="tab" aria-selected="true" data-t="0">Descriere</button><button role="tab" aria-selected="false" data-t="1">Valori nutriționale</button>
+            <button role="tab" aria-selected="false" data-t="2">Ingrediente & alergeni</button><button role="tab" aria-selected="false" data-t="3">Recenzii</button></div>
+          <div class="tabpanel" role="tabpanel" data-p="0"><p>${esc(p.desc)}</p>
+            ${p.use ? `<h4>Mod de utilizare</h4><p>${esc(p.use)}</p>` : ""}
+            ${p.store ? `<h4>Păstrare</h4><p>${esc(p.store)}</p>` : ""}
+            ${claim ? `<p class="fine">Proteinele contribuie la creșterea și menținerea masei musculare.</p>` : ""}
+            ${isSupp(p) ? `<div class="legal-note">Supliment alimentar. Nu depășiți doza zilnică recomandată. Suplimentele alimentare nu înlocuiesc o dietă variată și echilibrată și un stil de viață sănătos. A nu se lăsa la îndemâna copiilor.</div>` : ""}</div>
+          <div class="tabpanel" role="tabpanel" data-p="1" hidden>${nutritionTable(p)}</div>
+          <div class="tabpanel" role="tabpanel" data-p="2" hidden><h4>Ingrediente</h4><p>${boldAllergens(p.ingr)}</p>
+            <h4>Alergeni</h4><p class="allergens">${boldAllergens(p.alg)}</p>
+            <p class="fine">Dacă ai o alergie severă, verifică și eticheta de pe ambalaj.</p></div>
+          <div class="tabpanel" role="tabpanel" data-p="3" hidden><p><b>Încă nu are recenzii.</b> Fii printre primii care ne lasă o recenzie și primești 20 de lei la următoarea comandă.</p></div>
+        </div>
+      </div>
+    </div>
+    <section class="section" style="padding-top:24px"><div class="sec-head"><h2 style="font-size:36px">Merge perfect cu</h2></div>
+      <div class="grid">${crossSell(p).map(card).join("")}</div></section></div>`;
+
+  $$(".tablist button").forEach(b => b.onclick = () => {
+    $$(".tablist button").forEach(x => x.setAttribute("aria-selected", x === b));
+    $$(".tabpanel").forEach(x => x.hidden = x.dataset.p !== b.dataset.t); });
+  const nf = $("#notifyForm");
+  if (nf) nf.addEventListener("submit", e => { e.preventDefault(); const v = $("#notifyEmail").value, m = $("#notifyMsg"); m.hidden = false;
+    if (!validEmail(v)) { m.style.color = "var(--berry)"; m.textContent = "Verifică adresa de email, pare că lipsește ceva."; return; }
+    m.style.color = "var(--mint)"; m.textContent = "Te-am notat. (Magazin demo: nu se trimit emailuri încă.)"; });
+  if (p.stock === 0) return;
+  const price = () => { $("#pdpPrice").innerHTML = subOn ? `${fmt(p.price * .9)}<s>${fmt(p.price)}</s>` : fmt(p.price); };
+  $$('input[name="buy"]').forEach(r => r.onchange = () => { subOn = +r.value; price(); });
+  $$("[data-fq]").forEach(b => b.onclick = e => { e.preventDefault(); freq = +b.dataset.fq; $$("[data-fq]").forEach(x => x.setAttribute("aria-pressed", x === b)); $('input[name="buy"][value="1"]').checked = true; subOn = 1; price(); });
+  $("#qm").onclick = () => { qty = Math.max(1, qty - 1); $("#qv").textContent = qty; };
+  $("#qp").onclick = () => { qty = Math.min(99, qty + 1); $("#qv").textContent = qty; };
+  $("#addBtn").onclick = () => addToCart(p.id, qty, subOn ? freq : 0);
+  $("#buyNow").onclick = () => { addToCart(p.id, qty, subOn ? freq : 0, true); location.hash = "cos"; };
+}
+
+/* ---------- CART DRAWER ---------- */
+const drawer = $("#drawer"), scrim = $("#scrim");
+function openCart(){ renderDrawer(); drawer.classList.add("open"); scrim.classList.add("open"); drawer.setAttribute("aria-hidden", "false"); setTimeout(() => $("#closeCart")?.focus(), 50); }
+function closeCart(){ drawer.classList.remove("open"); scrim.classList.remove("open"); drawer.setAttribute("aria-hidden", "true"); }
+$("#cartBtn").onclick = openCart; scrim.onclick = closeCart;
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeCart(); });
+
+function progressHTML(t){
+  if (!cart.length) return "";
+  const left = FREE - t.after, pct = Math.min(100, t.after / FREE * 100);
+  return `<div class="progress ${left <= 0 ? "done" : ""}"><span>${left <= 0 ? "Super, ai livrare gratuită!" : `Mai adaugă produse de <b class="num">${fmt(left)}</b> și livrarea e gratuită`}</span>
+    <div class="track"><i style="width:${pct}%"></i></div></div>`;
+}
+function totalsHTML(t){
+  return `<div class="totals"><div><span>Subtotal</span><span class="num">${fmt(t.sub)}</span></div>
+    ${t.disc ? `<div style="color:var(--mint)"><span>Reducere ${COUPON} (-15%)</span><span class="num">-${fmt(t.disc)}</span></div>` : ""}
+    <div><span>Livrare</span><span class="num">${t.ship ? fmt(t.ship) : "Gratuită"}</span></div>
+    <div class="grand"><span>Total</span><span>${fmt(t.total)}</span></div></div>`;
+}
+function couponHTML(){
+  return `<details class="coupon" ${coupon ? "open" : ""}><summary>Ai un cod de reducere?</summary>
+    <form class="cf" data-coupon novalidate><label class="sr" for="cc">Cod reducere</label><input class="input" id="cc" value="${esc(coupon)}" placeholder="ex. ${COUPON}" autocomplete="off"><button class="btn btn-ghost btn-sm" type="submit">Aplică</button></form>
+    <p class="fine" data-cmsg ${coupon ? "" : "hidden"} style="margin-top:6px;color:var(--mint)">${coupon ? `Codul ${COUPON} a fost aplicat.` : ""}</p></details>`;
+}
+function bindCoupon(root, after){
+  $$("[data-coupon]", root).forEach(f => f.addEventListener("submit", e => { e.preventDefault();
+    const v = $("input", f).value.trim().toUpperCase(), m = $("[data-cmsg]", f.parentElement);
+    m.hidden = false;
+    if (v === COUPON) { coupon = COUPON; saveCart(); after(); }
+    else { coupon = ""; saveCart(); m.style.color = "var(--berry)"; m.textContent = "Codul nu e valid sau a expirat"; }
+  }));
+}
+function lineHTML(l, i){
+  const p = byId[l.id];
+  return `<div class="line"><a class="th" href="#p-${p.id}" style="${tint(flav(p))}">${art(p)}</a>
+    <div><h4>${esc(p.name)}</h4><small>${esc(p.size)}${l.s ? ` · Abonament la ${l.s} săpt. (-10%)` : ""}</small>
+      <div class="qty" style="margin-top:6px"><button data-dq="${i}" data-d="-1" aria-label="Scade">−</button><span>${l.q}</span><button data-dq="${i}" data-d="1" aria-label="Crește">+</button></div></div>
+    <div class="r"><span class="price" style="font-size:15px">${fmt(unit(l) * l.q)}</span><button class="linkbtn" data-rm="${i}">Șterge</button></div></div>`;
+}
+function bindLines(root, after){
+  $$("[data-dq]", root).forEach(b => b.onclick = () => { const l = cart[+b.dataset.dq]; l.q += +b.dataset.d; if (l.q < 1) cart.splice(+b.dataset.dq, 1); saveCart(); after(); });
+  $$("[data-rm]", root).forEach(b => b.onclick = () => { cart.splice(+b.dataset.rm, 1); saveCart(); after(); });
+}
+function renderDrawer(){
+  const t = totals();
+  drawer.innerHTML = `<header><h2>Coșul tău</h2><button class="icon-btn" id="closeCart" aria-label="Închide coșul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></header>
+  ${cart.length ? `<div class="items">${progressHTML(t).replace('class="progress', 'style="margin-top:12px" class="progress')}${cart.map(lineHTML).join("")}
+      ${t.cold ? `<div class="notice" style="margin-top:14px">${IC.snow}<span>Comanda conține produse refrigerate. Le livrăm în cutie izotermă.</span></div>` : ""}</div>
+    <footer>${couponHTML()}${totalsHTML(t)}<a class="btn btn-primary btn-block" href="#cos">Finalizează comanda</a></footer>`
+  : `<div class="items"><div class="cart-empty">${pack({ name: "Coș gol", pp: 0, shape: "bag", c: "x" })}
+      <p style="font-size:18px;font-weight:600">Coșul tău e gol. Hai să-l umplem cu proteine.</p>
+      <a class="btn btn-primary" href="#bestsellers">Vezi bestseller-urile</a></div></div>`}`;
+  $("#closeCart").onclick = closeCart;
+  bindLines(drawer, renderDrawer); bindCoupon(drawer, renderDrawer);
+}
+
+/* ---------- CHECKOUT ---------- */
+function viewCheckout(){
+  seo("Finalizează comanda | Gramo");
+  closeCart();
+  if (!cart.length) {
+    app.innerHTML = `<div class="wrap confirm"><h1>Coșul tău e gol.</h1><p style="font-size:18px">Hai să-l umplem cu proteine.</p><a class="btn btn-primary" href="#bestsellers">Vezi bestseller-urile</a></div>`; return;
+  }
+  const t = totals();
+  const f = (id, lab, type = "text", ac = "", opt) => `<label id="w-${id}">${lab}${opt ? ` <span class="fine">(opțional)</span>` : ""}<input class="input" id="${id}" type="${type}" autocomplete="${ac}" ${opt ? "" : "data-req"}><span class="err" hidden></span></label>`;
+  app.innerHTML = `<div class="wrap"><nav class="crumbs"><a href="#acasa">Acasă</a><span>/</span><span>Finalizează comanda</span></nav>
+  <div class="checkout">
+    <form id="coForm" novalidate class="form">
+      <h1>Finalizează comanda</h1>
+      <p><span class="demo-pill">MAGAZIN DEMO</span> <span class="fine">Comenzile nu sunt procesate și nu se face nicio plată.</span></p>
+      <div class="co-box form"><h2>Date de contact</h2>
+        <div class="two">${f("fn","Nume","text","family-name")}${f("ln","Prenume","text","given-name")}</div>
+        <div class="two">${f("em","Email","email","email")}${f("ph","Telefon","tel","tel")}</div></div>
+      <div class="co-box form"><h2>Adresa de livrare</h2>
+        ${f("ad","Stradă, număr, bloc, apartament","text","street-address")}
+        <div class="two">${f("ci","Localitate","text","address-level2")}${f("co","Județ","text","address-level1")}</div>
+        ${f("zp","Cod poștal","text","postal-code", 1)}</div>
+      <div class="co-box form"><h2>Plată</h2>
+        <div class="opt pay">
+          <label><input type="radio" name="pay" value="cod" checked><span><b>Plata la livrare</b><small>Plătești curierului, cash sau card.</small></span></label>
+          <label><input type="radio" name="pay" value="card"><span><b>Card online</b><small>Vei fi redirecționat către procesatorul de plăți securizat.</small></span></label></div></div>
+      <p class="err" id="payErr" hidden></p>
+      <button class="btn btn-primary btn-block" type="submit" style="padding:18px">Plasează comanda · ${fmt(t.total)}</button>
+    </form>
+    <aside class="summary"><div class="co-box" id="coSum"></div></aside>
+  </div></div>`;
+  const drawSum = () => { const t = totals();
+    if (!cart.length) { viewCheckout(); return; }
+    $("#coSum").innerHTML = `<h2>Sumar comandă</h2>${progressHTML(t)}${cart.map(lineHTML).join("")}
+      ${t.cold ? `<div class="notice" style="margin-block:12px">${IC.snow}<span>Comanda conține produse refrigerate. Le livrăm în cutie izotermă.</span></div>` : ""}
+      <div style="margin-block:14px">${couponHTML()}</div>${totalsHTML(t)}
+      <p class="ship-line" style="margin-top:12px">${IC.check}Comanzi până la ${CUTOFF} și pleacă azi</p>`;
+    bindLines($("#coSum"), () => { drawSum(); $('#coForm button[type="submit"]').textContent = `Plasează comanda · ${fmt(totals().total)}`; });
+    bindCoupon($("#coSum"), () => { drawSum(); $('#coForm button[type="submit"]').textContent = `Plasează comanda · ${fmt(totals().total)}`; });
+  };
+  drawSum();
+  $("#coForm").addEventListener("submit", e => { e.preventDefault();
+    let ok = true, first;
+    $$("[data-req]").forEach(i => { const w = i.parentElement, er = $(".err", w); let msg = "";
+      if (!i.value.trim()) msg = "Câmpul acesta e obligatoriu.";
+      else if (i.type === "email" && !validEmail(i.value)) msg = "Verifică adresa de email, pare că lipsește ceva.";
+      w.classList.toggle("bad", !!msg); er.hidden = !msg; er.textContent = msg; if (msg) { ok = false; first = first || i; } });
+    if (!ok) { first.focus(); return; }
+    const order = 1000 + Math.floor(Math.random() * 9000);
+    store.set("lastOrder", order);
+    cart = []; coupon = ""; saveCart(); renderDrawer();
+    viewConfirm(order);
+  });
+}
+function viewConfirm(order){
+  seo("Comandă primită | Gramo");
+  app.innerHTML = `<div class="wrap confirm">
+    <span style="width:72px;height:72px;border-radius:50%;background:var(--mint);color:#fff;display:grid;place-items:center">${IC.check.replace("<svg", '<svg width="36" height="36"')}</span>
+    <h1>Mulțumim!</h1><p class="order">Comanda #${order}</p>
+    <p style="font-size:18px;max-width:46ch">Comanda ta #${order} a fost primită. Îți trimitem pe email detaliile și numărul de urmărire.</p>
+    <p class="fine">Magazin demo: nicio comandă nu a fost procesată și nu s-a trimis niciun email.</p>
+    <a class="btn btn-primary" href="#acasa">Înapoi la magazin</a></div>`;
+  window.scrollTo(0, 0);
+}
+
+/* ---------- STATIC PAGES ---------- */
+const ph = s => `<span class="ph">${s}</span>`;
+function staticPage(title, metaT, inner){ seo(metaT); app.innerHTML = `<div class="wrap"><div class="page"><h1>${title}</h1>${inner}</div></div>`; }
+
+function viewAbout(){
+  staticPage("Am obosit de gustări proteice cu gust de carton.", "Despre noi | Gramo", `<div class="prose">
+    <p>Așa a început Gramo. Căutam ceva de mâncat între ședințe și sală, ceva care să ne țină sătui și să aibă gust bun. Găseam fie gustări bune și pline de zahăr, fie produse „fit” pe care le mâncam cu forța.</p>
+    <p>Așa că am început să gustăm. Sute de batoane, iaurturi, pudre și cookies. Am păstrat doar ce ne-a plăcut cu adevărat și am pus cifrele mari pe fiecare produs, ca să știi exact ce primești.</p>
+    <p>Astăzi avem peste 75 de produse în 5 categorii. Regula a rămas aceeași: gust întâi, cifre clare, fără compromisuri.</p>
+    <h2>Valorile noastre</h2>
+    <div class="values"><div><b>Gust întâi.</b><p>Fiecare produs trece testul echipei înainte să intre în magazin.</p></div>
+      <div><b>Transparență.</b><p>Proteinele, zahărul și caloriile sunt la vedere, nu ascunse în josul paginii.</p></div>
+      <div><b>Simplitate.</b><p>Fără diete complicate. Doar gustări mai bune pentru zilele tale.</p></div></div>
+    <div style="margin-top:10px"><a class="btn btn-primary" href="#c-batoane">Vezi produsele</a></div></div>`);
+}
+const FAQ = [
+  ["Pentru cine sunt produsele Gramo?","Pentru adulții care vor gustări mai sățioase și bogate în proteine. Nu trebuie să mergi la sală ca să le mănânci."],
+  ["Câtă proteină am nevoie pe zi?","Recomandarea generală pentru adulți este de aproximativ 0,8 g pe kilogram corp pe zi. Dacă faci sport intens sau ai nevoi speciale, discută cu un medic sau un nutriționist."],
+  ["Produsele înlocuiesc o masă?","Nu. Sunt gustări și suplimente alimentare care completează o alimentație variată și echilibrată."],
+  ["Au zahăr adăugat?","Multe produse nu au zahăr adăugat. Vezi eticheta „Fără zahăr adăugat” pe pagina fiecărui produs și tabelul nutrițional complet."],
+  ["Am alergii. Cum verific?","Pe fiecare pagină de produs găsești lista de ingrediente și alergenii scriși îngroșat. Dacă ai o alergie severă, verifică și eticheta de pe ambalaj."],
+  ["Aveți produse vegane?","Da. Caută eticheta „Vegan” sau filtrează după ea în fiecare categorie."],
+  ["Cum ajung lactatele la mine?","Le livrăm în ambalaj izoterm cu elemente de răcire, în maximum 48 de ore."],
+  ["Cât costă livrarea?","19,99 lei, gratuit la comenzi peste 199 lei."],
+  ["Pot returna produsele?","Da, produsele nedesfăcute și neperisabile, în 14 zile. Lactatele și produsele refrigerate nu pot fi returnate, pentru că se alterează rapid. Detalii pe pagina Livrare și retur."]
+];
+function viewFaq(){
+  staticPage("Întrebări frecvente", "Întrebări frecvente | Gramo", `<div class="faq" style="margin-top:24px">${FAQ.map(([q, a], i) => `<details ${i === 0 ? "open" : ""}><summary>${q}</summary><p>${a}</p></details>`).join("")}</div>
+    <p style="margin-top:28px">Nu ai găsit răspunsul? <a href="#contact">Scrie-ne</a>.</p>`);
+}
+function viewShipping(){
+  staticPage("Livrare și retur", "Livrare și retur | Gramo", `<div class="prose">
+    <h2>Livrare</h2><ul>
+      <li>Livrăm prin ${ph("[curier]")} în toată țara, în 24-48 de ore lucrătoare.</li>
+      <li>Cost livrare: 19,99 lei. Gratuit peste 199 lei.</li>
+      <li>Comenzile plasate până la ora 14:00 pleacă în aceeași zi.</li>
+      <li>Lactatele și produsele refrigerate vin în cutie izotermă cu elemente de răcire.</li>
+      <li>Primești numărul de urmărire pe email imediat ce coletul pleacă.</li></ul>
+    <h2>Retur</h2><ul>
+      <li>Ai 14 zile de la primire să returnezi produsele nedesfăcute, cu sigiliul intact.</li>
+      <li>Produsele refrigerate și cele cu termen scurt de valabilitate nu se pot returna (conform OUG 34/2014).</li>
+      <li>Dacă un produs a ajuns deteriorat sau greșit, scrie-ne în 48 de ore la ${ph("[contact@gramo.ro]")} cu o poză și rezolvăm pe loc.</li>
+      <li>Banii îți intră înapoi în maximum 14 zile de la primirea returului.</li></ul></div>`);
+}
+function viewContact(){
+  staticPage("Scrie-ne. Răspundem repede.", "Contact | Gramo", `<div class="contact-grid">
+    <dl><div><dt>Email</dt><dd>${ph("contact@gramo.ro")}</dd></div><div><dt>Telefon</dt><dd>${ph("07xx xxx xxx")}<br><span class="fine">luni-vineri, 9:00-17:00</span></dd></div>
+      <div><dt>Adresă</dt><dd>${ph("[adresa firmei]")}</dd></div><div><dt>Date firmă</dt><dd>${ph("[denumire SRL, CUI, nr. Registrul Comerțului]")}</dd></div></dl>
+    <form class="form co-box" id="ctForm" novalidate>
+      <label>Nume<input class="input" id="ctName" data-req autocomplete="name"><span class="err" hidden></span></label>
+      <label>Email<input class="input" id="ctEmail" type="email" data-req autocomplete="email"><span class="err" hidden></span></label>
+      <label>Număr comandă <span class="fine">(opțional)</span><input class="input" id="ctOrder"></label>
+      <label>Mesaj<textarea class="input" id="ctMsg" data-req></textarea><span class="err" hidden></span></label>
+      <button class="btn btn-primary" type="submit">Trimite mesajul</button><p class="fine" id="ctOk" hidden></p></form></div>`);
+  $("#ctForm").addEventListener("submit", e => { e.preventDefault(); let ok = true;
+    $$("#ctForm [data-req]").forEach(i => { const er = $(".err", i.parentElement); let m = "";
+      if (!i.value.trim()) m = "Câmpul acesta e obligatoriu."; else if (i.type === "email" && !validEmail(i.value)) m = "Verifică adresa de email, pare că lipsește ceva.";
+      i.parentElement.classList.toggle("bad", !!m); er.hidden = !m; er.textContent = m; if (m) ok = false; });
+    if (ok) { const o = $("#ctOk"); o.hidden = false; o.textContent = "Mesajul e gata. Magazin demo: formularul nu trimite încă mesaje, așa că folosește adresa de email de alături."; }
+  });
+}
+function view404(){
+  seo("Pagina nu există | Gramo");
+  app.innerHTML = `<div class="wrap p404"><span class="n">404</span><p>Ups, pagina asta a dispărut mai repede decât un baton după sală.</p><a class="btn btn-primary" href="#acasa">Înapoi la magazin</a></div>`;
+}
+
+/* ---------- ROUTER ---------- */
+function route(){
+  const h = decodeURIComponent(location.hash.slice(1)) || "acasa";
+  closeCart(); $("#nav").classList.remove("open");
+  $$("#nav a").forEach(a => a.toggleAttribute("aria-current", false));
+  const navHit = $$("#nav a").find(a => a.dataset.r === h); if (navHit) navHit.setAttribute("aria-current", "page");
+  let scroll = true;
+  if (h === "acasa") viewHome();
+  else if (/^hero-[abc]$/.test(h)) viewHome(h.slice(-1));
+  else if (h === "bestsellers") { viewHome(null, "bestsellers"); scroll = false; }
+  else if (h.startsWith("c-")) viewCat(h.slice(2));
+  else if (h.startsWith("p-")) viewProduct(h.slice(2));
+  else if (h === "pachete") viewPacks();
+  else if (h === "cos") viewCheckout();
+  else if (h === "despre") viewAbout();
+  else if (h === "intrebari") viewFaq();
+  else if (h === "livrare") viewShipping();
+  else if (h === "contact") viewContact();
+  else view404();
+  if (scroll) window.scrollTo(0, 0);
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-add]"); if (b) { e.preventDefault(); addToCart(b.dataset.add); }
+});
+window.addEventListener("hashchange", route);
+renderCount(); renderDrawer(); route();
+})();
+
+</script>
+
+</body>
+</html>

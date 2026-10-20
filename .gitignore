@@ -1,0 +1,6 @@
+.DS_Store
+.env
+tools/.env
+tools/ambalaje/.tmp/
+node_modules/
+__pycache__/
